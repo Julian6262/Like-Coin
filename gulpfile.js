@@ -19,10 +19,10 @@ function styles() {
         'node_modules/normalize.css/normalize.css',
         // 'node_modules/magnific-popup/dist/magnific-popup.css',
         // 'node_modules/swiper/swiper-bundle.css',
-        'app/scss/fonts.scss',
-        'app/scss/default.scss',
-        'app/scss/style.scss',
-        'app/scss/media.scss'
+        'docs/scss/fonts.scss',
+        'docs/scss/default.scss',
+        'docs/scss/style.scss',
+        'docs/scss/media.scss'
     ])
         .pipe(scss({outputStyle: 'compressed'}))
         .pipe(autoprefixer({
@@ -30,7 +30,7 @@ function styles() {
             grid: true
         }))
         .pipe(concat('style.min.css'))
-        .pipe(dest('app/css'))
+        .pipe(dest('docs/css'))
         .pipe(browserSync.stream())
 }
 
@@ -39,50 +39,50 @@ function scripts() {
         // 'node_modules/jquery/dist/jquery.js',
         // 'node_modules/magnific-popup/dist/jquery.magnific-popup.js',
         // 'node_modules/swiper/swiper-bundle.js',
-        'app/js/main.js'
+        'docs/js/main.js'
     ])
         .pipe(concat('main.min.js'))
         .pipe(uglify())
-        .pipe(dest('app/js'))
+        .pipe(dest('docs/js'))
         .pipe(browserSync.stream())
 }
 
 function fonts() {
-    return src('app/fonts/src/*.*')
+    return src('docs/fonts/src/*.*')
         .pipe(fonter({
             formats: ['woff', 'ttf']
         }))
-        .pipe(src('app/fonts/*.ttf'))
+        .pipe(src('docs/fonts/*.ttf'))
         .pipe(ttf2woff2())
-        .pipe(dest('app/fonts'))
+        .pipe(dest('docs/fonts'))
 }
 
 function pages() {
-    return src('app/pages/*.html')
+    return src('docs/pages/*.html')
         .pipe(include({
-            includePaths: 'app/components'
+            includePaths: 'docs/components'
         }))
         .pipe(dest('app'))
         .pipe(browserSync.stream())
 }
 
 function images() {
-    return src('app/img/src/*.*', '!app/img/src/*.svg')
-        .pipe(newer('app/img'))
+    return src('docs/img/src/*.*', '!docs/img/src/*.svg')
+        .pipe(newer('docs/img'))
         .pipe(avif({quality: 50}))
-        .pipe(src('app/img/src/*.*'))
+        .pipe(src('docs/img/src/*.*'))
 
-        .pipe(newer('app/img'))
+        .pipe(newer('docs/img'))
         .pipe(webp())
-        .pipe(src('app/img/src/*.*'))
+        .pipe(src('docs/img/src/*.*'))
 
-        .pipe(newer('app/img'))
+        .pipe(newer('docs/img'))
         .pipe(imagemin())
-        .pipe(dest('app/img'))
+        .pipe(dest('docs/img'))
 }
 
 function sprite() {
-    return src('app/img/*.svg')
+    return src('docs/img/*.svg')
         .pipe(svgSprite({
             mode: {
                 stack: {
@@ -91,34 +91,34 @@ function sprite() {
                 }
             }
         }))
-        .pipe(dest('app/img'))
+        .pipe(dest('docs/img'))
 }
 
 function watching() {
     browserSync.init({
         server: {
-            baseDir: "app/"
+            baseDir: "docs/"
         }
     });
-    watch(['app/scss/**/*.scss'], styles);
-    watch(['app/img/src/*.*'], images);
-    watch(['app/fonts/src/*.*'], fonts);
-    // watch(['app/components/*.*', 'app/pages/*.*'], pages);         //несколько страниц
-    watch(['app/*.html']).on('change', browserSync.reload);
-    watch(['app/js/**/*.js', '!app/js/**/main.min.js'], scripts);
+    watch(['docs/scss/**/*.scss'], styles);
+    watch(['docs/img/src/*.*'], images);
+    watch(['docs/fonts/src/*.*'], fonts);
+    // watch(['docs/components/*.*', 'docs/pages/*.*'], pages);         //несколько страниц
+    watch(['docs/*.html']).on('change', browserSync.reload);
+    watch(['docs/js/**/*.js', '!docs/js/**/main.min.js'], scripts);
 }
 
 function build() {
     del.sync('dist');
     images();
     return src([
-        'app/*.html',
-        'app/css/style.min.css',
-        'app/js/main.min.js',
-        'app/fonts/*.*',
-        'app/img/*.*',
-        '!app/img/*.svg',
-        'app/img/sprite.svg'
+        'docs/*.html',
+        'docs/css/style.min.css',
+        'docs/js/main.min.js',
+        'docs/fonts/*.*',
+        'docs/img/*.*',
+        '!docs/img/*.svg',
+        'docs/img/sprite.svg'
     ], {base: 'app'})
         .pipe(dest('dist'))
 }
