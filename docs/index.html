@@ -16,7 +16,6 @@
 
 <div class="wrapper">
 
-
     <header class="header">
         <div class="container">
             <div class="header__inner">
@@ -26,19 +25,19 @@
                 <nav class="menu">
                     <ul class="menu__items">
                         <li class="menu__item">
-                            <a class="menu__item-link" href="#">Главная</a>
+                            <a class="menu__item-link menu__item--scroll" href="#top">Главная</a>
                         </li>
 
                         <li class="menu__item">
-                            <a class="menu__item-link" href="#">Как начать?</a>
+                            <a class="menu__item-link menu__item--scroll" href="#start">Как начать?</a>
                         </li>
 
                         <li class="menu__item">
-                            <a class="menu__item-link" href="#">Калькулятор прибыли</a>
+                            <a class="menu__item-link menu__item--scroll" href="#calculator">Калькулятор прибыли</a>
                         </li>
 
                         <li class="menu__item">
-                            <a class="menu__item-link" href="#">Контакты</a>
+                            <a class="menu__item-link menu__item--scroll" href="#support">Контакты</a>
                         </li>
 
                         <li class="menu__item ">
@@ -63,7 +62,7 @@
                 <div class="top__inner">
 
                     <div class="top__content">
-                        <h1 class="top__title">
+                        <h1 class="top__title" id="top">
                             LIKE COIN
                         </h1>
 
@@ -125,7 +124,7 @@
 
         <section class="start">
             <div class="container">
-                <h2 class="start__title">
+                <h2 class="start__title" id="start">
                     КАК НАЧАТЬ?
                 </h2>
 
@@ -179,21 +178,20 @@
         <section class="calculator">
             <div class="container">
 
-                <h2 class="calculator__title">
+                <h2 class="calculator__title" id="calculator">
                     КАЛЬКУЛЯТОР ПРИБЫЛИ
                 </h2>
 
-                <div class="calculator__line">
-                    <div class="calculator__line-dot"></div>
-                </div>
+                <label>
+                    <input class="calculator__line" id="calc-input" type="range" min="100" max="50000" step="1"
+                           value="100">
+                </label>
 
                 <form class="calculator__sum">
                     <label class="calculator__sum-title">
                         СУММА
-                        <input class="calculator__sum-digits" type="text">
+                        <input id="calc-value" class="calculator__sum-digits" type="text">
                     </label>
-
-
                 </form>
 
                 <p class="calculator__count">
@@ -267,6 +265,12 @@
             </div>
         </section>
 
+        <section class="support">
+            <h3 class="support__text" id="support">
+                Для связи с технической поддержкой перейдите по вкладке "Служба поддержки" в меню вашего аккаунта.
+            </h3>
+        </section>
+
     </main>
 
 
@@ -316,12 +320,11 @@
                 </svg>
             </button>
 
-            <iframe class="modal__frame" src="rules.html" sandbox=""></iframe>
+            <iframe class="modal__frame" src="rules.html"></iframe>
         </div>
 
 
     </div>
-
 
 </div>
 
