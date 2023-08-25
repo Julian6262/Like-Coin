@@ -543,17 +543,20 @@
     }
 
     &__profit-sum {
-        padding: 5px 13px;
+        padding: 5px 0;
         font-size: 10px;
         font-weight: 400;
         background-color: #e77630;
         border-radius: 50px;
         color: white;
+        text-align: center;
+        width: 137px;
     }
 
     &__profit-digits {
         font-size: 15px;
         font-weight: 400;
+
     }
 
     &__referrals {
@@ -586,6 +589,22 @@
         font-weight: 500;
         letter-spacing: 1px;
     }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 
