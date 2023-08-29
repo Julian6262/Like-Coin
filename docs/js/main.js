@@ -11,11 +11,9 @@ document.addEventListener("click", (e) => {
     }
 });
 
-document.addEventListener('keypress', (e) => {
-    console.log(e);
-    console.log(modal);
-    if (e.target.classList.contains('modal--active')) {
-        console.log(e);
+document.addEventListener('keyup', (e) => {
+    if (e.key == 'Escape') {
+        modal.classList.remove('modal--active');
     }
 });
 
@@ -34,8 +32,6 @@ menu.forEach((item) => {
             top: elem.getBoundingClientRect().top - 50,
             behavior: 'smooth'
         });
-
-
     });
 });
 
@@ -71,6 +67,10 @@ value.addEventListener("input", (event) => {
 
     if (event.target.value > 50000) {
         event.target.value = 50000;
+    }
+
+    if (event.target.value < 0) {
+        event.target.value = 0;
     }
 
     input.value = event.target.value;

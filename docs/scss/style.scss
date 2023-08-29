@@ -14,7 +14,6 @@
     width: 85%;
     height: 85%;
     transform: translateX(-50%) translateY(-50%);
-    text-align: center;
     top: 50%;
     left: 50%;
     position: relative;
@@ -48,12 +47,6 @@
     background-color: rgba(0, 0, 0, 0.79);
     opacity: 1;
     transition: all 0.4s;
-}
-
-.modal__frame {
-    width: 100%;
-    height: 100%;
-    border: none;
 }
 
 
@@ -127,6 +120,7 @@
         font-weight: 400;
         color: white;
         letter-spacing: 0.7px;
+        outline: none;
 
         &:hover {
             text-decoration: none;
@@ -286,13 +280,19 @@
     background-color: #f7f7f7;
     padding: 70px 70px;
     height: 100%;
+    overflow-y: auto;
+    color: #484848;
+    font-weight: 400;
 
     &__content {
         box-shadow: 0 0 20px 7px rgba(0, 0, 0, .09);
         border-radius: 36px;
         background-color: white;
         padding: 50px 30px;
-        color: #484848;
+    }
+
+    &__item-global {
+        margin-bottom: 50px;
     }
 
     &__title {
@@ -307,28 +307,29 @@
         font-size: 25px;
         text-align: center;
         margin-bottom: 30px;
-        font-weight: 400;
+        font-weight: 500;
+    }
+
+    &__paragraph {
+        margin-bottom: 20px;
     }
 
     &__list {
         font-size: 15px;
         margin-bottom: 30px;
-        font-weight: 400;
-
     }
 
     &__list-item {
-        list-style: decimal;
-
     }
 
     &__sublist-item {
-        list-style: circle;
+        list-style: inside;
         margin-left: 20px;
     }
 
     &__list-item {
         margin-bottom: 20px;
+        line-height: 20px;
     }
 
     &__sublist {
@@ -338,6 +339,12 @@
     }
 
     &__link {
+        color: #e98930;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
 
