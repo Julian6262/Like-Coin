@@ -151,9 +151,18 @@
     }
 
     &__partners-link {
+
     }
 
     &__partners-img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    &__partners-img1 {
+        width: 95px;
+        height: 32px;
     }
 }
 
@@ -628,5 +637,78 @@ input[type="number"] {
         font-weight: 500;
         line-height: 50px;
         text-align: center;
+    }
+}
+
+
+//MAIN-PAGES
+.main-pages {
+    background-color: #cecece;
+}
+
+
+//REGISTER
+.register {
+    display: flex;
+    justify-content: space-around;
+
+    &--mini {
+    }
+
+    &__sidebar {
+        margin-top: 20px;
+    }
+
+    &__sidebar-items {
+    }
+
+    &__sidebar-item {
+    }
+
+    &__sidebar-link {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+    }
+
+    &__sidebar-img {
+        width: 14px;
+        height: 14px;
+    }
+
+    &__sidebar-text {
+
+    }
+
+    &__content {
+        width: 637px;
+        margin-top: 40px;
+    }
+
+    &__content-top {
+    }
+
+    &__content-title {
+    }
+
+    &__content-text {
+    }
+
+    &__content-body {
+    }
+
+    &__content-btn {
+    }
+
+    &__form {
+    }
+
+    &__form-input {
+    }
+
+    &__captcha {
+    }
+
+    &__form-btn {
     }
 }

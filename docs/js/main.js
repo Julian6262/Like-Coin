@@ -12,7 +12,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener('keyup', (e) => {
-    if (e.key == 'Escape') {
+    if (e.key === 'Escape') {
         modal.classList.remove('modal--active');
     }
 });
