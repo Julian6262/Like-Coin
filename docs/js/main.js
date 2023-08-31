@@ -2,7 +2,7 @@
 const modal = document.querySelector('.modal');
 
 document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("footer__rules")) {
+    if (e.target.classList.contains("footer__rules") || e.target.classList.contains("register__content-btn")) {
         modal.classList.add('modal--active');
     }
 

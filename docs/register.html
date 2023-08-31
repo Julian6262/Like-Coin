@@ -47,25 +47,43 @@
 
             <div class="register__sidebar">
                 <ul class="register__sidebar-items">
-
                     <li class="register__sidebar-item">
                         <a class="register__sidebar-link" href="index.html">
-                            <img class="register__sidebar-img" src="img/sprite.svg#house" alt="house">
-                            <p class="register__sidebar-text">Главная</p>
+                            <svg class="register__sidebar-svg">
+                                <use xlink:href="img/sprite.svg#house4"></use>
+                            </svg>
+
+                            Главная
                         </a>
                     </li>
 
                     <li class="register__sidebar-item">
                         <a class="register__sidebar-link" href="register.html">
-                            <img class="register__sidebar-img" src="img/sprite.svg#reg" alt="house">
-                            <p class="register__sidebar-text">Регистрация</p>
+                            <svg class="register__sidebar-svg">
+                                <use xlink:href="img/sprite.svg#reg"></use>
+                            </svg>
+
+                            Регистрация
                         </a>
                     </li>
 
                     <li class="register__sidebar-item">
                         <a class="register__sidebar-link" href="#">
-                            <img class="register__sidebar-img" src="img/sprite.svg#question" alt="house">
-                            <p class="register__sidebar-text">Вопрос/Ответ</p>
+                            <svg class="register__sidebar-svg">
+                                <use xlink:href="img/sprite.svg#reg"></use>
+                            </svg>
+
+                            Вход в аккаунт
+                        </a>
+                    </li>
+
+                    <li class="register__sidebar-item">
+                        <a class="register__sidebar-link" href="#">
+                            <svg class="register__sidebar-svg">
+                                <use xlink:href="img/sprite.svg#question"></use>
+                            </svg>
+
+                            Вопрос/Ответ
                         </a>
                     </li>
 
@@ -73,14 +91,21 @@
             </div>
 
             <section class="register__content">
-                <div class="register__content-top">
-                    <h3 class="register__content-title">
-                        Регистрация
-                    </h3>
 
-                    <p class="register__content-text">
-                        Регистрация и авторизация за секунду
-                    </p>
+                <div class="register__content-top">
+                    <svg class="register__content-svg">
+                        <use xlink:href="img/sprite.svg#lock"></use>
+                    </svg>
+
+                    <div class="register__content-inner">
+                        <h3 class="register__content-topTitle">
+                            Регистрация
+                        </h3>
+
+                        <p class="register__content-topText">
+                            Регистрация и авторизация за секунду
+                        </p>
+                    </div>
                 </div>
 
                 <div class="register__content-body">
@@ -88,27 +113,38 @@
                         Для регистрации через соц. сеть нажмите на иконку:
                     </p>
 
-                    <button class="register__content-btn">
-                        VKONTAKTE
-                    </button>
+                    <div class="register__btns">
+                        <button class="register__btn register__btn--vk">
+                            <svg class="register__btn-svg">
+                                <use xlink:href="img/sprite.svg#vk2"></use>
+                            </svg>
 
-                    <button class="register__content-btn">
-                        OK.RU
-                    </button>
+                            VKONTAKTE
+                        </button>
 
-                    <button class="register__content-btn">
-                        GOOGLE
-                    </button>
+                        <button class="register__btn register__btn--ok">
+                            <svg class="register__btn-svg">
+                                <use xlink:href="img/sprite.svg#ok"></use>
+                            </svg>
+
+                            OK.RU
+                        </button>
+
+                        <button class="register__btn register__btn--go">
+                            <svg class="register__btn-svg">
+                                <use xlink:href="img/sprite.svg#google"></use>
+                            </svg>
+
+                            GOOGLE
+                        </button>
+                    </div>
+
 
                     <p class="register__content-text">
                         Для регистрации через EMAIL заполните форму:
                     </p>
 
                     <form class="register__form">
-                        <label>
-                            <input type="text" class="register__form-input" placeholder="Введите ваш Email">
-                        </label>
-
                         <label>
                             <input type="text" class="register__form-input" placeholder="Ваше имя">
                         </label>
@@ -118,23 +154,28 @@
                         </label>
 
                         <label>
+                            <input type="text" class="register__form-input" placeholder="Введите ваш Email">
+                        </label>
+
+                        <label>
                             <input type="password" class="register__form-input" placeholder="Придумайте пароль">
                         </label>
 
                         <label>
-                            <input type="password" class="register__form-input" placeholder="Повтор пароля">
+                            <input type="password" class="register__form-input" placeholder="Повторите пароль">
                         </label>
 
-                        <div class="register__captcha">
-                            register__captcha
-                        </div>
+                        <img class="register__captcha" src="img/captcha.png" alt="captcha">
 
                         <label>
-                            <input type="submit" class="register__form-btn" placeholder="ЗАРЕГИСТРИРОВАТЬСЯ">
+                            <input type="text" class="register__form-input register__form--captcha"
+                                   placeholder="Код с картинки">
                         </label>
+
+                        <button class="register__form-btn">ЗАРЕГИСТРИРОВАТЬСЯ</button>
                     </form>
 
-                    <p class="register__content-text">
+                    <p class="register__content-text register__content--warning">
                         Внимание!
                     </p>
 
@@ -143,9 +184,9 @@
                         доступ к своей странице, то не сможете попасть в личный кабинет!
                     </p>
 
-                    <p class="register__content-text register--mini">
+                    <p class="register__content-text register__content--mini">
                         Регистрируясь на сайте, вы подтверждаете что вы ознакомились и согласились с
-                        <button class="footer__rules">Пользовательским соглашением.</button>
+                        <button class="register__content-btn">Пользовательским соглашением.</button>
                         Регистрируясь на сайте, вы подтверждаете, что вам исполнилось 18 лет.
                     </p>
                 </div>
