@@ -1,3 +1,14 @@
+//MAIN-PAGES
+.main-pages {
+    background-color: #e7e7e7;
+    flex: 1 1 auto;
+}
+
+.main-first {
+    flex: 1 1 auto;
+}
+
+
 //MODAL
 .modal {
     position: fixed;
@@ -96,7 +107,6 @@
             color: white;
             background-image: linear-gradient(to bottom, #e98930 0%, #e65c31 100%);
             transition: .4s;
-
         }
     }
 }
@@ -148,10 +158,6 @@
             scale: 1.1;
             transition: .4s;
         }
-    }
-
-    &__partners-link {
-
     }
 
     &__partners-img {
@@ -238,11 +244,8 @@
         justify-content: space-between;
     }
 
-    &__statistic-name {
-    }
-
     &__statistic-info {
-        color: #e98930;
+        color: #f16208;
 
     }
 
@@ -341,14 +344,8 @@
         line-height: 20px;
     }
 
-    &__sublist {
-    }
-
-    &__sublist-item {
-    }
-
     &__link {
-        color: #e98930;
+        color: #f16208;
         text-decoration: underline;
 
         &:hover {
@@ -384,7 +381,6 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 150px;
-
     }
 
     &__item {
@@ -436,7 +432,6 @@
         outline: none;
         border-radius: 50px;
 
-
         &::-webkit-slider-thumb {
             appearance: none;
             border: 1px solid #484848;
@@ -459,7 +454,6 @@
             cursor: pointer;
             margin-top: 0;
             box-shadow: 0.3em 0.3em 0.4em rgba(193, 194, 197, 0.75) inset, -0.3em -0.3em 0.4em #fff inset;
-
         }
 
         &::-ms-thumb {
@@ -472,7 +466,6 @@
             cursor: pointer;
             margin-top: 0;
             box-shadow: 0.3em 0.3em 0.4em rgba(193, 194, 197, 0.75) inset, -0.3em -0.3em 0.4em #fff inset;
-
         }
     }
 
@@ -632,7 +625,7 @@ input[type="number"] {
     &__text {
         margin-bottom: 95px;
         margin-top: 95px;
-        color: #e98930;
+        color: #f16208;
         font-size: 25px;
         font-weight: 500;
         line-height: 50px;
@@ -641,31 +634,15 @@ input[type="number"] {
 }
 
 
-//MAIN-PAGES
-.main-pages {
-    background-color: #cecece;
-}
-
-
-//REGISTER
-.register {
+//MAIN
+.main {
     position: relative;
-    padding: 50px 0;
-
-    &--mini {
-    }
+    margin-top: 50px;
+    margin-bottom: 50px;
 
     &__sidebar {
-
         position: absolute;
-        top: 30px;
         left: 0;
-    }
-
-    &__sidebar-items {
-    }
-
-    &__sidebar-item {
     }
 
     &__sidebar-link {
@@ -673,24 +650,20 @@ input[type="number"] {
         gap: 7px;
         align-items: center;
         margin-bottom: 18px;
-        color: #343434;
+        color: black;
         letter-spacing: .8px;
 
         &:hover {
-            color: #e98930;
-            stroke: #e98930;
-            fill: #e98930;
+            color: #f16208;
+            stroke: #f16208;
+            fill: #f16208;
             transition: .3s;
         }
     }
 
     &__sidebar-svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    &__sidebar-text {
-
+        width: 18px;
+        height: 18px;
     }
 
     &__content {
@@ -698,6 +671,7 @@ input[type="number"] {
         background-color: white;
         border-radius: 50px;
         margin: 0 auto;
+        box-shadow: 20px 17px 12px 4px rgba(0, 0, 0, .09);
     }
 
     &__content-top {
@@ -759,6 +733,7 @@ input[type="number"] {
         border-radius: 50px;
         cursor: pointer;
         color: white;
+        box-shadow: 3px 4px 12px 4px rgba(0, 0, 0, .09);
         font-size: 16px;
         font-weight: 500;
         display: flex;
@@ -798,7 +773,11 @@ input[type="number"] {
         margin: 30px 0 40px;
         display: flex;
         flex-direction: column;
+        align-items: center;
+    }
 
+    &__form-label {
+        margin-bottom: 20px;
     }
 
     &__form-input {
@@ -812,7 +791,6 @@ input[type="number"] {
         box-shadow: 7px 12px 12px 4px rgba(0, 0, 0, .09);
         border-radius: 2.6rem;
         background-color: #ffffff;
-        margin-bottom: 20px;
         padding: 0 20px;
         text-align: center;
 
@@ -823,7 +801,7 @@ input[type="number"] {
         }
 
         &:focus {
-            border: 3px solid black;
+            border: 2px solid black;
 
             &::placeholder {
                 color: transparent;
@@ -841,8 +819,7 @@ input[type="number"] {
         width: 167px;
         height: 63px;
         border: #cecece 1px solid;
-        margin: 0 auto;
-        margin-bottom: 10px;
+        margin: 0 auto 10px;
     }
 
     &__form-btn {
@@ -862,6 +839,10 @@ input[type="number"] {
         }
     }
 
+    &__form--margin {
+        margin-bottom: 0;
+    }
+
     &__content--warning {
         font-weight: 700;
         margin-bottom: 10px;
@@ -876,7 +857,7 @@ input[type="number"] {
 
     &__content-btn {
         cursor: pointer;
-        color: #e98930;
+        color: #f16208;
         text-decoration: underline;
         outline: none;
 
@@ -885,5 +866,109 @@ input[type="number"] {
         }
     }
 
+    &__content-link {
+        display: block;
+        margin-bottom: 5px;
+        text-decoration: underline;
+        color: #f16208;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__questions {
+        width: 910px;
+        margin: 0 20px 0 auto;
+        color: #424242;
+    }
+
+    &__questions-title {
+        color: #343434;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    &__questions-hint {
+        color: #5b5b5b;
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    &__questions-items {
+        background-color: white;
+        padding: 20px;
+        box-shadow: 0 2px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    &__questions-item {
+        margin-top: 10px;
+        border: 1px solid #eaeaea;
+        background-color: #fafafa;
+    }
+
+    &__questions-header {
+        font-size: 16px;
+        font-weight: 500;
+        color: #424242;
+        padding-left: 15px;
+        padding-right: 50px;
+        background-color: #fafafa;
+        width: 100%;
+        height: 50px;
+        box-shadow: 7px 8px 11px 0 rgba(196, 174, 151, .56);
+        text-align: left;
+        position: relative;
+        outline: none;
+
+        &:hover {
+            background-color: #dedede;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 15px;
+            background: url("../img/sprite.svg#arrow") no-repeat;
+            background-size: 100% 100%;
+            width: 20px;
+            height: 20px;
+            transition: .5s;
+        }
+    }
+
+    &__questions-text {
+        max-height: 0;
+        opacity: 0;
+        background-color: rgb(241 238 238 / 66%);
+        transition: 0.3s;
+    }
+
+    &__questions-textOl {
+        padding: 40px 30px;
+    }
+
+    &__questions-header--active {
+        background-color: #e7e7e7;
+    }
+
+    &__questions-text--visible {
+        opacity: 1;
+        height: auto;
+        transition: all 0.3s;
+    }
+}
+
+.main__questions-header.main__questions-header--active::before {
+    transform: rotate(180deg) translateY(50%);
+    transition: .4s;
 }
 

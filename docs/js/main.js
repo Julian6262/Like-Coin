@@ -2,7 +2,7 @@
 const modal = document.querySelector('.modal');
 
 document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("footer__rules") || e.target.classList.contains("register__content-btn")) {
+    if (e.target.classList.contains("footer__rules") || e.target.classList.contains("main__content-btn")) {
         modal.classList.add('modal--active');
     }
 
@@ -37,45 +37,70 @@ menu.forEach((item) => {
 
 
 // CALCULATOR
-const multiplier = 0.0000121832359;
-const multiplierDay = 86400;
+const checkCalculator = document.querySelector('.calculator');
 
-const value = document.querySelector("#calc-value");
-const input = document.querySelector("#calc-input");
-const speedUp = document.querySelector("#sp-up");
-const day = document.querySelector("#day");
-const month = document.querySelector("#month");
-const threeMonth = document.querySelector("#threeMonth");
-const sixMonth = document.querySelector("#sixMonth");
+if (checkCalculator) {
+    const multiplier = 0.0000121832359;
+    const multiplierDay = 86400;
 
-function calculate() {
-    speedUp.value = (Math.round((input.value * multiplier) * 10000000) / 10000000).toFixed(7);
-    day.value = (speedUp.value * multiplierDay).toFixed(2);
-    month.value = (speedUp.value * multiplierDay * 30).toFixed(2);
-    threeMonth.value = (speedUp.value * multiplierDay * 30 * 3).toFixed(2);
-    sixMonth.value = (speedUp.value * multiplierDay * 30 * 6).toFixed(2);
+    const value = document.querySelector("#calc-value");
+    const input = document.querySelector("#calc-input");
+    const speedUp = document.querySelector("#sp-up");
+    const day = document.querySelector("#day");
+    const month = document.querySelector("#month");
+    const threeMonth = document.querySelector("#threeMonth");
+    const sixMonth = document.querySelector("#sixMonth");
+
+    function calculate() {
+        speedUp.value = (Math.round((input.value * multiplier) * 10000000) / 10000000).toFixed(7);
+        day.value = (speedUp.value * multiplierDay).toFixed(2);
+        month.value = (speedUp.value * multiplierDay * 30).toFixed(2);
+        threeMonth.value = (speedUp.value * multiplierDay * 30 * 3).toFixed(2);
+        sixMonth.value = (speedUp.value * multiplierDay * 30 * 6).toFixed(2);
+    }
+
+    value.value = input.value;
+
+    input.addEventListener("input", (event) => {
+        value.value = event.target.value;
+        calculate();
+    });
+
+    value.addEventListener("input", (event) => {
+
+        if (event.target.value > 50000) {
+            event.target.value = 50000;
+        }
+
+        if (event.target.value < 0) {
+            event.target.value = 0;
+        }
+
+        input.value = event.target.value;
+        calculate();
+    });
 }
 
-value.value = input.value;
 
-input.addEventListener("input", (event) => {
-    value.value = event.target.value;
-    calculate();
-});
+// ACCORDEON/////////////////////////////////
+const checkQuestions = document.querySelector('.main__questions');
 
-value.addEventListener("input", (event) => {
+if (checkQuestions) {
 
-    if (event.target.value > 50000) {
-        event.target.value = 50000;
-    }
+    const accordeon = document.querySelector('.main__questions-items');
+    const accordeonTitles = accordeon.querySelectorAll('.main__questions-header');
 
-    if (event.target.value < 0) {
-        event.target.value = 0;
-    }
+    accordeonTitles.forEach.call(accordeonTitles, function (accordeonTitle) {
+        accordeonTitle.addEventListener('click', function () {
+            const currentText = accordeonTitle.parentElement.querySelector('.main__questions-text')
+            accordeonTitle.classList.toggle('main__questions-header--active');
+            currentText.classList.toggle('main__questions-text--visible');
 
-    input.value = event.target.value;
-    calculate();
-});
-
-
-
+            if (currentText.classList.contains('main__questions-text--visible')) {
+                currentText.style.maxHeight = currentText.scrollHeight + 'px';
+            } else {
+                currentText.style.maxHeight = null;
+            }
+        });
+    });
+}
