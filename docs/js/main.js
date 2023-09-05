@@ -12,7 +12,7 @@ document.addEventListener("click", (e) => {
 });
 
 document.addEventListener('keyup', (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && modal.classList.contains('modal--active')) {
         modal.classList.remove('modal--active');
     }
 });
@@ -43,13 +43,13 @@ if (checkCalculator) {
     const multiplier = 0.0000121832359;
     const multiplierDay = 86400;
 
-    const value = document.querySelector("#calc-value");
-    const input = document.querySelector("#calc-input");
-    const speedUp = document.querySelector("#sp-up");
-    const day = document.querySelector("#day");
-    const month = document.querySelector("#month");
-    const threeMonth = document.querySelector("#threeMonth");
-    const sixMonth = document.querySelector("#sixMonth");
+    const value = document.getElementById("calc-value");
+    const input = document.getElementById("calc-input");
+    const speedUp = document.getElementById("sp-up");
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const threeMonth = document.getElementById("threeMonth");
+    const sixMonth = document.getElementById("sixMonth");
 
     function calculate() {
         speedUp.value = (Math.round((input.value * multiplier) * 10000000) / 10000000).toFixed(7);
@@ -83,20 +83,20 @@ if (checkCalculator) {
 
 
 // ACCORDEON/////////////////////////////////
-const checkQuestions = document.querySelector('.main__questions');
+const checkQuestions = document.querySelector('.questions');
 
 if (checkQuestions) {
 
-    const accordeon = document.querySelector('.main__questions-items');
-    const accordeonTitles = accordeon.querySelectorAll('.main__questions-header');
+    const accordeon = document.querySelector('.questions__items');
+    const accordeonTitles = accordeon.querySelectorAll('.questions__header');
 
     accordeonTitles.forEach.call(accordeonTitles, function (accordeonTitle) {
         accordeonTitle.addEventListener('click', function () {
-            const currentText = accordeonTitle.parentElement.querySelector('.main__questions-text')
-            accordeonTitle.classList.toggle('main__questions-header--active');
-            currentText.classList.toggle('main__questions-text--visible');
+            const currentText = accordeonTitle.parentElement.querySelector('.questions__text')
+            accordeonTitle.classList.toggle('questions__header--active');
+            currentText.classList.toggle('questions__text--visible');
 
-            if (currentText.classList.contains('main__questions-text--visible')) {
+            if (currentText.classList.contains('questions__text--visible')) {
                 currentText.style.maxHeight = currentText.scrollHeight + 'px';
             } else {
                 currentText.style.maxHeight = null;

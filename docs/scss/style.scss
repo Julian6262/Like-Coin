@@ -1,11 +1,45 @@
-//MAIN-PAGES
+//MAIN
 .main-pages {
-    background-color: #e7e7e7;
+    background-color: #f1f1f1;
     flex: 1 1 auto;
 }
 
 .main-first {
     flex: 1 1 auto;
+}
+
+.main {
+    position: relative;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+//SIDEBAR
+.sidebar {
+    position: absolute;
+    left: 0;
+
+    &__link {
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        margin-bottom: 18px;
+        color: black;
+        letter-spacing: .8px;
+
+        &:hover {
+            color: #f16208;
+            stroke: #f16208;
+            fill: #f16208;
+            transition: .3s;
+        }
+    }
+
+    &__svg {
+        width: 18px;
+        height: 18px;
+    }
 }
 
 
@@ -106,7 +140,6 @@
         &:hover {
             color: white;
             background-image: linear-gradient(to bottom, #e98930 0%, #e65c31 100%);
-            transition: .4s;
         }
     }
 }
@@ -408,7 +441,7 @@
 }
 
 
-//CALCOLATOR
+//CALCULATOR
 .calculator {
     background: url("../img/calculator-bg.jpg") no-repeat center;
     background-size: cover;
@@ -634,38 +667,7 @@ input[type="number"] {
 }
 
 
-//MAIN
 .main {
-    position: relative;
-    margin-top: 50px;
-    margin-bottom: 50px;
-
-    &__sidebar {
-        position: absolute;
-        left: 0;
-    }
-
-    &__sidebar-link {
-        display: flex;
-        gap: 7px;
-        align-items: center;
-        margin-bottom: 18px;
-        color: black;
-        letter-spacing: .8px;
-
-        &:hover {
-            color: #f16208;
-            stroke: #f16208;
-            fill: #f16208;
-            transition: .3s;
-        }
-    }
-
-    &__sidebar-svg {
-        width: 18px;
-        height: 18px;
-    }
-
     &__content {
         width: 637px;
         background-color: white;
@@ -876,14 +878,17 @@ input[type="number"] {
             text-decoration: none;
         }
     }
+}
 
-    &__questions {
-        width: 910px;
-        margin: 0 20px 0 auto;
-        color: #424242;
-    }
 
-    &__questions-title {
+//QUESTIONS
+.questions {
+    width: 910px;
+    margin-left: auto;
+    color: #424242;
+
+
+    &__title {
         color: #343434;
         font-size: 28px;
         font-weight: 700;
@@ -891,7 +896,7 @@ input[type="number"] {
         text-align: center;
     }
 
-    &__questions-hint {
+    &__hint {
         color: #5b5b5b;
         font-size: 15px;
         font-weight: 500;
@@ -899,19 +904,19 @@ input[type="number"] {
         text-align: center;
     }
 
-    &__questions-items {
+    &__items {
         background-color: white;
         padding: 20px;
         box-shadow: 0 2px 28px rgba(0, 0, 0, 0.1);
     }
 
-    &__questions-item {
+    &__item {
         margin-top: 10px;
         border: 1px solid #eaeaea;
         background-color: #fafafa;
     }
 
-    &__questions-header {
+    &__header {
         font-size: 16px;
         font-weight: 500;
         color: #424242;
@@ -924,6 +929,7 @@ input[type="number"] {
         text-align: left;
         position: relative;
         outline: none;
+
 
         &:hover {
             background-color: #dedede;
@@ -945,30 +951,217 @@ input[type="number"] {
         }
     }
 
-    &__questions-text {
+    &__text {
         max-height: 0;
         opacity: 0;
         background-color: rgb(241 238 238 / 66%);
         transition: 0.3s;
     }
 
-    &__questions-textOl {
+    &__textOl {
         padding: 40px 30px;
     }
 
-    &__questions-header--active {
+    &__header--active {
         background-color: #e7e7e7;
     }
 
-    &__questions-text--visible {
+    &__text--visible {
         opacity: 1;
         height: auto;
         transition: all 0.3s;
     }
 }
 
-.main__questions-header.main__questions-header--active::before {
+.questions__header.questions__header--active::before {
     transform: rotate(180deg) translateY(50%);
     transition: .4s;
+}
+
+
+//ACCOUNT
+//.header__inner--userIn {
+//    justify-content: left;
+//}
+
+.header__account {
+    display: flex;
+    margin-left: 137px;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header__account-user {
+    display: flex;
+    color: white;
+    font-size: 24px;
+    letter-spacing: 1.5px;
+    font-weight: 500;
+    gap: 10px;
+    align-items: center;
+}
+
+.header__account-balance {
+    font-size: 19px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: white;
+}
+
+.header__account-btn {
+    background: linear-gradient(to top, #e65c31 0%, #e98930 100%);
+    border-radius: 50px;
+    font-weight: 500;
+    line-height: 20px;
+    color: white;
+    padding: 8px 30px;
+    margin-left: 10px;
+}
+
+.header__account-btn:hover {
+    background-image: linear-gradient(to top, #e98930 0%, #e65c31 100%);
+}
+
+.header__account-svg {
+    width: 22px;
+    height: 22px;
+}
+
+.account {
+    width: 910px;
+    margin-left: auto;
+
+    &__title {
+        color: #343434;
+        font-weight: 700;
+        line-height: 28px;
+        font-size: 29px;
+        letter-spacing: 2px;
+    }
+
+    &__bonus {
+        color: #424242;
+        font-weight: 700;
+        text-align: center;
+        margin-top: 40px;
+        letter-spacing: .7px;
+    }
+
+    &__bonus-item {
+        padding: 30px 30px;
+        border-radius: 35px;
+        border: 2px #e78030 solid;
+        margin-bottom: 20px;
+    }
+
+    &__bonus-title {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    &__bonus-text {
+        line-height: 20px;
+    }
+
+    &__mining {
+        background-image: linear-gradient(-43deg, #e55830 0%, #e88b30 100%);
+        padding: 30px;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        border-radius: 25px;
+        margin-top: 50px;
+    }
+
+    &__mining-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__mining-speed {
+        width: 435px;
+        text-align: center;
+        color: white;
+    }
+
+    &__mining-speedTitle {
+        font-size: 24px;
+        letter-spacing: 0.5px;
+    }
+
+    .margin-top {
+        margin-top: 70px;
+    }
+
+    &__mining-speedText {
+        margin: 20px 0 20px;
+        font-size: 25px;
+        font-weight: 500;
+    }
+
+    &__mining-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        color: white;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        width: 310px;
+        height: 55px;
+        border-radius: 10px;
+        line-height: 30px;
+        font-size: 20px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    &__mining-btn--change {
+        background-color: white;
+        color: #e78030;
+
+        &:hover {
+            background-color: #eaeaea;
+            transition: .3s;
+        }
+    }
+
+    &__mining-btn--speed {
+        background-image: linear-gradient(to top, #00c7ff 0%, #0071ff 100%);
+
+        &:hover {
+            background-image: linear-gradient(to bottom, #00c7ff 0%, #0071ff 100%);
+        }
+    }
+
+    &__mining-btn--payout {
+        background-image: linear-gradient(to top, #e65c31 0%, #e98930 100%);
+
+        &:hover {
+            background-image: linear-gradient(to bottom, #e65c31 0%, #e98930 100%);
+        }
+    }
+
+    &__mining-balance {
+        width: 415px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: white;
+        border-radius: 25px;
+        font-size: 25px;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+    }
+
+    &__mining-balanceTitle {
+        color: #e78030;
+        letter-spacing: 2px;
+    }
+
+    &__mining-balanceText {
+        color: #e78030;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+    }
 }
 
