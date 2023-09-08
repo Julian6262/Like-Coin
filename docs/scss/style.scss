@@ -67,23 +67,23 @@
 .modal__svg {
     right: 40px;
     top: 30px;
-    width: 23px;
-    height: 23px;
     position: absolute;
-    stroke: #000000;
+    fill: black;
     cursor: pointer;
-    stroke-width: 1.5;
+    transition: .2s;
 }
 
 .modal__svg-img {
     pointer-events: none;
+    width: 23px;
+    height: 23px;
 }
 
 .modal__svg:hover {
-    stroke: #e98930;
-    stroke-width: 3.5;
+    stroke: #f16208;
+    fill: #f16208;
     scale: 1.1;
-    transition: .3s;
+    transition: .2s;
 }
 
 .modal--active {
@@ -980,10 +980,6 @@ input[type="number"] {
 
 
 //ACCOUNT
-//.header__inner--userIn {
-//    justify-content: left;
-//}
-
 .header__account {
     display: flex;
     margin-left: 137px;
@@ -1089,7 +1085,7 @@ input[type="number"] {
     }
 
     .margin-top {
-        margin-top: 70px;
+        margin-top: 40px;
     }
 
     &__mining-speedText {
@@ -1162,6 +1158,258 @@ input[type="number"] {
         color: #e78030;
         font-weight: 700;
         letter-spacing: 1.5px;
+    }
+
+    &__mining-time {
+        margin-top: 150px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        color: white;
+    }
+
+    &__mining-timeTitle {
+        font-size: 33px;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 80px;
+    }
+
+    &__mining-timeTime {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 115px;
+        line-height: 80px;
+    }
+
+    &__mining-hours, &__mining-minutes, &__mining-seconds {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__mining-min {
+        font-size: 18px;
+    }
+
+    &__profit {
+        display: flex;
+        margin-top: 35px;
+        justify-content: space-between;
+        color: white;
+    }
+
+    &__profit-item {
+        background-image: linear-gradient(to top, #e65c31 0%, #e98930 100%);
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        width: 280px;
+        border-radius: 25px;
+        text-align: center;
+        letter-spacing: .7px;
+    }
+
+    &__profit-sum {
+        font-size: 23px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    &__profit-text {
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    &__profit-svg {
+        width: 50px;
+        height: 50px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    &__actions, &__details {
+        margin-top: 50px;
+        display: flex;
+        color: #424242;
+        justify-content: space-between;
+    }
+
+    &__actions-item, &__details-item {
+        background-color: white;
+        width: 435px;
+        border-radius: 25px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        text-align: center;
+        border-bottom: 6px solid #e65f31;
+    }
+
+    &__actions-title, &__details-title {
+        color: #343434;
+        font-weight: 500;
+        text-align: center;
+        font-size: 15px;
+        line-height: 21px;
+        margin-bottom: 10px;
+        letter-spacing: .4px;
+    }
+
+    &__actions-table1 {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+
+        col:nth-child(1) {
+            width: 14%;
+        }
+
+        col:nth-child(2) {
+            width: 39%;
+        }
+
+        col:nth-child(3) {
+            width: 20%;
+        }
+    }
+
+    &__actions-table2 {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+
+        col:nth-child(1) {
+            width: 14%;
+        }
+
+        col:nth-child(2) {
+            width: 55%;
+        }
+    }
+
+    &__actions-header {
+        font-size: 13px;
+        border-bottom: 1px solid #d1d1d1;
+    }
+
+    &__actions-th {
+        font-weight: 400;
+        padding: 5px 8px;
+    }
+
+
+    &__actions-td--left {
+        text-align: left;
+    }
+
+    &__actions-svg {
+        width: 14px;
+        height: 14px;
+        fill: white;
+    }
+
+    &__actions-img {
+        display: flex;
+        width: 45px;
+        height: 29px;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+            filter: grayscale(40%);
+            transition: .3s;
+        }
+    }
+
+    &__actions-img--vk {
+        background-color: #2a81f4;
+    }
+
+    &__actions-img--ok {
+        background-color: #f16208;
+    }
+
+    &__actions-img--go {
+        background-color: #b63f31;
+    }
+
+    &__actions-td, &__details-td {
+        padding: 10px 8px;
+        border-bottom: 1px solid #d1d1d1;
+        word-wrap: break-word;
+    }
+
+    &__actions-link {
+        color: #e88130;
+        font-size: 12px;
+        margin: 15px 0 10px;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__details {
+        margin-top: 30px;
+    }
+
+    &__details-table1 {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        table-layout: fixed;
+
+        col:nth-child(1) {
+            width: 34%;
+        }
+    }
+
+    &__details-table2 {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        table-layout: fixed;
+
+        col:nth-child(1) {
+            width: 78%;
+        }
+    }
+
+    &__details-link {
+        color: #e88130;
+        font-weight: 500;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    &__details-link--top {
+        margin-top: 7px;
+        display: block;
+    }
+
+    &__details-btn {
+        color: white;
+        background-image: linear-gradient(to top, #e65c31 0%, #e98930 100%);
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        padding: 10px 25px;
+        letter-spacing: .3px;
+        font-size: 18px;
+        border-radius: 15px;
+        margin-top: 15px;
+        margin-bottom: 5px;
+
+        &:hover {
+            background-image: linear-gradient(to bottom, #e65c31 0%, #e98930 100%);
+        }
+    }
+
+    &__details-text {
+        padding: 10px 8px;
     }
 }
 
