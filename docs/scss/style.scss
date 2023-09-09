@@ -9,16 +9,20 @@
 }
 
 .main {
-    position: relative;
+    //position: relative;
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
+    //gap: 130px;
 }
 
 
 //SIDEBAR
 .sidebar {
-    position: absolute;
-    left: 0;
+    //position: absolute;
+    //left: 0;
+    width: 230px;
+    margin-right: 40px;
 
     &__link {
         display: flex;
@@ -27,6 +31,7 @@
         margin-bottom: 18px;
         color: black;
         letter-spacing: .8px;
+        transition: .3s;
 
         &:hover {
             color: #f16208;
@@ -125,6 +130,11 @@
 
     &__item {
         padding: 0 20px;
+
+
+        &-link {
+            transition: .4s;
+        }
 
         &-link:hover {
             color: #e98930;
@@ -672,7 +682,7 @@ input[type="number"] {
         width: 637px;
         background-color: white;
         border-radius: 50px;
-        margin: 0 auto;
+        margin-right: auto;
         box-shadow: 20px 17px 12px 4px rgba(0, 0, 0, .09);
     }
 
@@ -894,6 +904,7 @@ input[type="number"] {
         font-weight: 700;
         letter-spacing: 2px;
         text-align: center;
+        margin-top: 0;
     }
 
     &__hint {
@@ -979,7 +990,7 @@ input[type="number"] {
 }
 
 
-//ACCOUNT
+//ACCOUNT-HEADER
 .header__account {
     display: flex;
     margin-left: 137px;
@@ -1024,7 +1035,9 @@ input[type="number"] {
     height: 22px;
 }
 
-.account {
+
+//ACCOUNT
+.account, .payment {
     width: 910px;
     margin-left: auto;
 
@@ -1034,6 +1047,7 @@ input[type="number"] {
         line-height: 28px;
         font-size: 29px;
         letter-spacing: 2px;
+        margin-top: 0;
     }
 
     &__bonus {
@@ -1413,3 +1427,56 @@ input[type="number"] {
     }
 }
 
+
+//PAYMENT
+.payment {
+    &__text {
+        font-size: 20px;
+        color: #a7a7a7;
+    }
+
+    &__items {
+        display: flex;
+        margin-top: 40px;
+        justify-content: space-between;
+    }
+
+    &__item {
+        transition: .3s;
+
+        &:hover {
+            transition: .3s;
+            filter: contrast(85%);
+        }
+    }
+
+    &__item-inner {
+        background-color: white;
+        padding: 10px 10px 3px 10px;
+        border-radius: 20px;
+        box-shadow: 7px 20px 14px 6px rgba(0, 0, 0, .09);
+    }
+
+    &__item-img {
+        width: 193px;
+        height: 77px;
+    }
+
+    &__item-price {
+        background-color: #63eb65;
+        text-align: center;
+        border-radius: 20px;
+        width: 74%;
+        margin: 0 auto;
+        font-weight: 700;
+        color: #207a21;
+    }
+
+    &__item-name {
+        padding-top: 11px;
+        text-transform: uppercase;
+        color: #a1a1a0;
+        background-color: transparent;
+        text-align: center;
+    }
+}
