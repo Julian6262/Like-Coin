@@ -9,7 +9,7 @@
     <meta name="keywords" content="Like Coin, лайк коин">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Аккаунт - Заказ выплаты</title>
+    <title>Аккаунт - Увеличить скорость</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                     <div class="header__account-balance">
                         Ваш баланс:
 
-                        <a class="header__account-btn" href="#">
+                        <a class="header__account-btn" href="payment.html">
                             <span class="header__account-sum">3.80</span> ₽
                         </a>
                     </div>
@@ -158,80 +158,89 @@
                     </ul>
                 </div>
 
-                <section class="payment">
-                    <h1 class="payment__title">
-                        Заказать выплату
+                <section class="speedup">
+                    <h1 class="speedup__title">
+                        Увеличить скорость майнинга
                     </h1>
 
-                    <p class="payment__text">
-                        Выберите удобный для вас способ получить выплату:
-                    </p>
+                    <div class="speedup__content">
+                        <div class="speedup__left">
+                            <form class="speedup__form">
+                                <label class="speedup__form-label">
+                                    Введите сумму:
+                                    <span class="speedup__form-inputWrapper">
+                                        <input class="speedup__form-input" id="speedupInput" type="number" value="100"
+                                               autocomplete="off">
+                                    </span>
+                                </label>
+                                <a class="speedup__form-btn" type="submit" href="deposit.html">
+                                    ОПЛАТИТЬ
+                                </a>
+                            </form>
 
-                    <ul class="payment__items">
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="card.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/visa.png" alt="visa">
+                            <p class="speedup__warning">
+                                Внимание!
+                                <br>
+                                Минимальная сумма - 100 руб.
+                                <br>
+                                Максимальная сумма - 50000 руб.
+                            </p>
 
-                                    <p class="payment__item-price">
-                                        от 1100 Р.
+                            <p class="speedup__count">
+                                ВАША СКОРОСТЬ УВЕЛИЧИТСЯ НА:
+                                <output class="speedup__count-speed" id="speedupOutput"></output>
+                                МОНЕТ В СЕКУНДУ
+                            </p>
+                        </div>
+
+                        <div class="speedup__right">
+                            <p class="speedup__right-title">
+                                В данный момент:
+                            </p>
+
+                            <ul class="speedup__items">
+                                <li class="speedup__item">
+                                    <p class="speedup__item-title">
+                                        Ваша скорость:
                                     </p>
-                                </div>
 
-                                <p class="payment__item-name">
-                                    Карта (РФ)
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="payeer.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/payeer.png" alt="payeer">
-
-                                    <p class="payment__item-price">
-                                        от 2 Р.
+                                    <p class="speedup__item-text">
+                                        0.001382 монет в секунду
                                     </p>
-                                </div>
+                                </li>
 
-                                <p class="payment__item-name">
-                                    payeer
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="qiwi.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/qiwi.png" alt="qiwi">
-
-                                    <p class="payment__item-price">
-                                        от 110 Р.
+                                <li class="speedup__item">
+                                    <p class="speedup__item-title">
+                                        Ваша прибыль за день:
                                     </p>
-                                </div>
 
-                                <p class="payment__item-name">
-                                    qiwi
-                                </p>
-                            </a>
-                        </li>
-
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="fkwallet.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/fkwallet.png" alt="fkwallet">
-
-                                    <p class="payment__item-price">
-                                        от 10 Р.
+                                    <p class="speedup__item-text">
+                                        119.4048 монет
                                     </p>
-                                </div>
+                                </li>
 
-                                <p class="payment__item-name">
-                                    fkwallet
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
+                                <li class="speedup__item">
+                                    <p class="speedup__item-title">
+                                        Ваша прибыль за месяц:
+                                    </p>
+
+                                    <p class="speedup__item-text">
+                                        3701.5488 монет
+                                    </p>
+                                </li>
+
+                                <li class="speedup__item">
+                                    <p class="speedup__item-title">
+                                        Ваша прибыль за 6 месяцев:
+                                    </p>
+
+                                    <p class="speedup__item-text">
+                                        21851.0784 монет
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </section>
 
             </div>

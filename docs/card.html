@@ -9,7 +9,7 @@
     <meta name="keywords" content="Like Coin, лайк коин">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Аккаунт - Заказ выплаты</title>
+    <title>Аккаунт - Выплата на Карты (Россия)</title>
 </head>
 
 <body>
@@ -37,7 +37,7 @@
                     <div class="header__account-balance">
                         Ваш баланс:
 
-                        <a class="header__account-btn" href="#">
+                        <a class="header__account-btn" href="payment.html">
                             <span class="header__account-sum">3.80</span> ₽
                         </a>
                     </div>
@@ -158,80 +158,90 @@
                     </ul>
                 </div>
 
-                <section class="payment">
-                    <h1 class="payment__title">
-                        Заказать выплату
-                    </h1>
+                <section class="payout">
 
-                    <p class="payment__text">
-                        Выберите удобный для вас способ получить выплату:
-                    </p>
+                    <div class="payout__top">
+                        <div class="payout__left">
+                            <h1 class="payout__title">
+                                Выплата на Карты (Россия)
+                            </h1>
 
-                    <ul class="payment__items">
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="card.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/visa.png" alt="visa">
-
-                                    <p class="payment__item-price">
-                                        от 1100 Р.
-                                    </p>
-                                </div>
-
-                                <p class="payment__item-name">
-                                    Карта (РФ)
-                                </p>
+                            <a class="payout__link" href="payment.html">
+                                << Выбрать другой способ
                             </a>
-                        </li>
 
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="payeer.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/payeer.png" alt="payeer">
+                            <form class="form">
+                                <label class="form__label form__label--payout">
+                                    Введите номер карты: [Пример: 11112222333444]
+                                    <input type="number" class="form__input">
+                                </label>
 
-                                    <p class="payment__item-price">
-                                        от 2 Р.
-                                    </p>
-                                </div>
+                                <label class="form__label form__label--payout">
+                                    Сумма: [Минимум 1100 руб.]
+                                    <input type="number" class="form__input">
+                                </label>
 
-                                <p class="payment__item-name">
-                                    payeer
-                                </p>
-                            </a>
-                        </li>
+                                <button class="form__btn">ЗАКАЗАТЬ ВЫПЛАТУ</button>
+                            </form>
+                        </div>
 
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="qiwi.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/qiwi.png" alt="qiwi">
+                        <div class="payout__right">
+                            <img class="payout__right-img" src="img/visa.png" alt="visa">
 
-                                    <p class="payment__item-price">
-                                        от 110 Р.
-                                    </p>
-                                </div>
+                            <p class="payout__text payout__text--commission">
+                                Комиссия платежного шлюза составляет 5%
+                            </p>
 
-                                <p class="payment__item-name">
-                                    qiwi
-                                </p>
-                            </a>
-                        </li>
+                            <p class="payout__text">
+                                Выплаты осуществляются через платежные шлюзы.
+                                Срок выплаты составляет от 5 минут до 12 часов.
+                            </p>
+                        </div>
+                    </div>
 
-                        <li class="payment__item">
-                            <a class="payment__item-link" href="fkwallet.html">
-                                <div class="payment__item-inner">
-                                    <img class="payment__item-img" src="img/fkwallet.png" alt="fkwallet">
+                    <div class="payout__table">
+                        <h5 class="payout__table-title">
+                            Ваши выплаты:
+                        </h5>
 
-                                    <p class="payment__item-price">
-                                        от 10 Р.
-                                    </p>
-                                </div>
+                        <table class="payout__table-content">
+                            <colgroup span="4">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr class="payout__table-header">
+                                <th class="payout__table-th">Сумма</th>
+                                <th class="payout__table-th">Карта</th>
+                                <th class="payout__table-th">Дата</th>
+                                <th class="payout__table-th">Статус</th>
+                            </tr>
 
-                                <p class="payment__item-name">
-                                    fkwallet
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
+                            <tr class="payout__table-tr">
+                                <td class="payout__table-td">11111 ₽</td>
+                                <td class="payout__table-td">P10999798341</td>
+                                <td class="payout__table-td">21.09.23</td>
+                                <td class="payout__table-td">Оплачено</td>
+                            </tr>
+
+                            <tr class="payout__table-tr">
+                                <td class="payout__table-td">11111 ₽</td>
+                                <td class="payout__table-td">P10999798341</td>
+                                <td class="payout__table-td">21.09.23</td>
+                                <td class="payout__table-td">Оплачено</td>
+                            </tr>
+
+                            <tr class="payout__table-tr">
+                                <td class="payout__table-td">11111 ₽</td>
+                                <td class="payout__table-td">P10999798341</td>
+                                <td class="payout__table-td">21.09.23</td>
+                                <td class="payout__table-td">Оплачено</td>
+                            </tr>
+
+                        </table>
+                    </div>
+
                 </section>
 
             </div>

@@ -1,3 +1,75 @@
+// CALCULATOR
+const multiplier = 0.0000121832359;
+const multiplierDay = 86400;
+const checkCalculator = document.querySelector('.calculator');
+
+if (checkCalculator) {
+    const calcOutput = document.getElementById("calc-value");
+    const calcInput = document.getElementById("calc-input");
+    const speedUp = document.getElementById("sp-up");
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const threeMonth = document.getElementById("threeMonth");
+    const sixMonth = document.getElementById("sixMonth");
+
+    function calculate() {
+        speedUp.value = (Math.round((calcInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
+        day.value = (speedUp.value * multiplierDay).toFixed(2);
+        month.value = (speedUp.value * multiplierDay * 30).toFixed(2);
+        threeMonth.value = (speedUp.value * multiplierDay * 30 * 3).toFixed(2);
+        sixMonth.value = (speedUp.value * multiplierDay * 30 * 6).toFixed(2);
+    }
+
+    calcOutput.value = calcInput.value;
+    calculate();
+
+    calcInput.addEventListener("input", (event) => {
+        calcOutput.value = event.target.value;
+        calculate();
+    });
+
+    calcOutput.addEventListener("input", (event) => {
+
+        if (event.target.value > 50000) {
+            event.target.value = 50000;
+        }
+
+        if (event.target.value < 1) {
+            event.target.value = 1;
+        }
+
+        calcInput.value = event.target.value;
+        calculate();
+    });
+}
+
+
+// SPEEDUP-COUNT
+const speedup = document.querySelector('.speedup');
+
+if (speedup) {
+    const speedupInput = document.getElementById("speedupInput");
+    const speedupOutput = document.getElementById("speedupOutput");
+
+    speedupOutput.value = (Math.round((speedupInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
+
+    speedupInput.addEventListener("input", (event) => {
+
+        if (event.target.value > 50000) {
+            event.target.value = 50000;
+        }
+
+        if (event.target.value < 1) {
+            event.target.value = 1;
+        }
+
+        if (event.target.value > 99 && event.target.value < 50001) {
+            speedupOutput.value = (Math.round((speedupInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
+        }
+    });
+}
+
+
 // MODAL////////////////////////////////////////////////
 const modal = document.querySelector('.modal');
 
@@ -34,52 +106,6 @@ menu.forEach((item) => {
         });
     });
 });
-
-
-// CALCULATOR
-const checkCalculator = document.querySelector('.calculator');
-
-if (checkCalculator) {
-    const multiplier = 0.0000121832359;
-    const multiplierDay = 86400;
-
-    const value = document.getElementById("calc-value");
-    const input = document.getElementById("calc-input");
-    const speedUp = document.getElementById("sp-up");
-    const day = document.getElementById("day");
-    const month = document.getElementById("month");
-    const threeMonth = document.getElementById("threeMonth");
-    const sixMonth = document.getElementById("sixMonth");
-
-    function calculate() {
-        speedUp.value = (Math.round((input.value * multiplier) * 10000000) / 10000000).toFixed(7);
-        day.value = (speedUp.value * multiplierDay).toFixed(2);
-        month.value = (speedUp.value * multiplierDay * 30).toFixed(2);
-        threeMonth.value = (speedUp.value * multiplierDay * 30 * 3).toFixed(2);
-        sixMonth.value = (speedUp.value * multiplierDay * 30 * 6).toFixed(2);
-    }
-
-    value.value = input.value;
-
-    input.addEventListener("input", (event) => {
-        value.value = event.target.value;
-        calculate();
-    });
-
-    value.addEventListener("input", (event) => {
-
-        if (event.target.value > 50000) {
-            event.target.value = 50000;
-        }
-
-        if (event.target.value < 0) {
-            event.target.value = 0;
-        }
-
-        input.value = event.target.value;
-        calculate();
-    });
-}
 
 
 // ACCORDEON/////////////////////////////////
