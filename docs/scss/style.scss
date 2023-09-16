@@ -32,7 +32,7 @@
         height: 50px;
         outline: none;
         color: #545454;
-        font-size: 19px;
+        font-size: 1.9rem;
         font-weight: 600;
         border: 1px solid #e98930;
         box-shadow: 7px 12px 12px 4px rgba(0, 0, 0, .09);
@@ -204,7 +204,7 @@
         display: flex;
         letter-spacing: 1.6px;
         color: white;
-        font-size: 13px;
+        font-size: 1.3rem;
         text-transform: uppercase;
         font-weight: 700;
         align-items: center;
@@ -320,7 +320,7 @@
     }
 
     &__title {
-        font-size: 55px;
+        font-size: 5.5rem;
         font-weight: 700;
         line-height: 71.5px;
         text-transform: uppercase;
@@ -329,7 +329,7 @@
     }
 
     &__text {
-        font-size: 36px;
+        font-size: 3.6rem;
         line-height: 47px;
         font-weight: 400;
         letter-spacing: 1.5px;
@@ -346,7 +346,7 @@
     }
 
     &__statistic-title {
-        font-size: 23px;
+        font-size: 2.3rem;
         color: white;
         text-transform: uppercase;
         background: #e98130;
@@ -361,7 +361,7 @@
     }
 
     &__statistic-item {
-        font-size: 17px;
+        font-size: 1.7rem;
         margin-bottom: 5px;
         line-height: 24px;
         display: flex;
@@ -375,14 +375,14 @@
     }
 
     &__statistic-rname {
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 500;
         letter-spacing: 0.5px;
         margin-bottom: 20px;
     }
 
     &__statistic-summ {
-        font-size: 27px;
+        font-size: 2.7rem;
         font-weight: 700;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
@@ -433,7 +433,7 @@
     }
 
     &__title {
-        font-size: 40px;
+        font-size: 4rem;
         line-height: 28px;
         text-align: center;
         margin-bottom: 80px;
@@ -441,7 +441,7 @@
     }
 
     &__subtitle {
-        font-size: 25px;
+        font-size: 2.5rem;
         text-align: center;
         margin-bottom: 30px;
         font-weight: 500;
@@ -452,7 +452,7 @@
     }
 
     &__list {
-        font-size: 15px;
+        font-size: 1.5rem;
         margin-bottom: 30px;
     }
 
@@ -488,7 +488,7 @@
 
 
     &__title {
-        font-size: 40px;
+        font-size: 4rem;
         line-height: 28px;
         font-weight: 500;
         padding-top: 100px;
@@ -518,7 +518,7 @@
     }
 
     &__item-title {
-        font-size: 19px;
+        font-size: 1.9rem;
         line-height: 28px;
         font-weight: 500;
         margin-top: 20px;
@@ -540,7 +540,7 @@
     text-align: center;
 
     &__title {
-        font-size: 40px;
+        font-size: 4rem;
         line-height: 28px;
         font-weight: 500;
         padding-top: 80px;
@@ -595,7 +595,7 @@
     }
 
     &__sum {
-        font-size: 24px;
+        font-size: 2.4rem;
         line-height: 24px;
         font-weight: 500;
         margin-bottom: 40px;
@@ -629,7 +629,7 @@
     }
 
     &__count-speed {
-        font-size: 24px;
+        font-size: 2.4rem;
         padding-left: 5px;
         padding-right: 5px;
     }
@@ -681,7 +681,7 @@
 
     &__profit-sum {
         padding: 5px 0;
-        font-size: 10px;
+        font-size: 1rem;
         font-weight: 400;
         background-color: #e77630;
         border-radius: 50px;
@@ -691,7 +691,7 @@
     }
 
     &__profit-digits {
-        font-size: 15px;
+        font-size: 1.5rem;
         font-weight: 400;
 
     }
@@ -722,7 +722,7 @@
     &__text {
         padding-bottom: 100px;
         color: white;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 500;
         letter-spacing: 1px;
     }
@@ -754,7 +754,7 @@ input[type="number"] {
         margin-bottom: 95px;
         margin-top: 95px;
         color: #f16208;
-        font-size: 25px;
+        font-size: 2.5rem;
         font-weight: 500;
         line-height: 50px;
         text-align: center;
@@ -792,19 +792,19 @@ input[type="number"] {
     }
 
     &__content-topTitle {
-        font-size: 25px;
+        font-size: 2.5rem;
         margin-bottom: 15px;
     }
 
     &__content-topText {
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 400;
         line-height: 25px;
         color: white;
     }
 
     &__content-text {
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 400;
         line-height: 25px;
         color: #424242;
@@ -831,7 +831,7 @@ input[type="number"] {
         cursor: pointer;
         color: white;
         box-shadow: 3px 4px 12px 4px rgba(0, 0, 0, .09);
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -872,7 +872,7 @@ input[type="number"] {
     }
 
     &__content--mini {
-        font-size: 10px;
+        font-size: 1rem;
         line-height: 13px;
         margin: 30px auto 0;
         width: 350px;
@@ -911,7 +911,7 @@ input[type="number"] {
 
     &__title {
         color: #343434;
-        font-size: 28px;
+        font-size: 2.8rem;
         font-weight: 700;
         letter-spacing: 2px;
         text-align: center;
@@ -920,7 +920,6 @@ input[type="number"] {
 
     &__hint {
         color: #5b5b5b;
-        font-size: 15px;
         font-weight: 500;
         margin-bottom: 30px;
         text-align: center;
@@ -939,7 +938,7 @@ input[type="number"] {
     }
 
     &__header {
-        font-size: 16px;
+        font-size: 1.6rem;
         font-weight: 500;
         color: #424242;
         padding-left: 15px;
@@ -1013,7 +1012,7 @@ input[type="number"] {
 .header__account-user {
     display: flex;
     color: white;
-    font-size: 24px;
+    font-size: 2.4rem;
     letter-spacing: 1.5px;
     font-weight: 500;
     gap: 10px;
@@ -1021,7 +1020,7 @@ input[type="number"] {
 }
 
 .header__account-balance {
-    font-size: 19px;
+    font-size: 1.9rem;
     font-weight: 500;
     letter-spacing: 3px;
     color: white;
@@ -1047,8 +1046,10 @@ input[type="number"] {
 }
 
 
-//ACCOUNT
-.account, .payment, .card, .speedup, .deposit, .payout, .fiat, .crypto {
+//ACCOUNT/////////////////////////////////////////////////////////////////
+//ACCOUNT/////////////////////////////////////////////////////////////////
+//ACCOUNT/////////////////////////////////////////////////////////////////
+.account, .payment, .card, .speedup, .deposit, .payout, .fiat, .crypto, .payouts {
     width: 910px;
     margin-left: auto;
 
@@ -1056,7 +1057,7 @@ input[type="number"] {
         color: #343434;
         font-weight: 700;
         line-height: 28px;
-        font-size: 29px;
+        font-size: 2.9rem;
         letter-spacing: 2px;
         margin-top: 0;
     }
@@ -1080,7 +1081,7 @@ input[type="number"] {
     }
 
     &__bonus-title {
-        font-size: 25px;
+        font-size: 2.5rem;
         margin-bottom: 30px;
     }
 
@@ -1108,7 +1109,7 @@ input[type="number"] {
     }
 
     &__mining-speedTitle {
-        font-size: 24px;
+        font-size: 2.4rem;
         letter-spacing: 0.5px;
     }
 
@@ -1118,7 +1119,7 @@ input[type="number"] {
 
     &__mining-speedText {
         margin: 20px 0 20px;
-        font-size: 25px;
+        font-size: 2.5rem;
         font-weight: 500;
     }
 
@@ -1133,7 +1134,7 @@ input[type="number"] {
         height: 55px;
         border-radius: 10px;
         line-height: 30px;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;
         cursor: pointer;
     }
@@ -1173,7 +1174,7 @@ input[type="number"] {
         align-items: center;
         background-color: white;
         border-radius: 25px;
-        font-size: 25px;
+        font-size: 2.5rem;
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
     }
 
@@ -1198,7 +1199,7 @@ input[type="number"] {
     }
 
     &__mining-timeTitle {
-        font-size: 33px;
+        font-size: 3.3rem;
         font-weight: 700;
         letter-spacing: 3px;
         margin-bottom: 80px;
@@ -1207,7 +1208,7 @@ input[type="number"] {
     &__mining-timeTime {
         display: flex;
         justify-content: space-evenly;
-        font-size: 115px;
+        font-size: 11.5rem;
         line-height: 80px;
     }
 
@@ -1217,7 +1218,7 @@ input[type="number"] {
     }
 
     &__mining-min {
-        font-size: 18px;
+        font-size: 1.8rem;
     }
 
     &__profit {
@@ -1237,13 +1238,13 @@ input[type="number"] {
     }
 
     &__profit-sum {
-        font-size: 23px;
+        font-size: 2.3rem;
         font-weight: 700;
         margin-bottom: 10px;
     }
 
     &__profit-text {
-        font-size: 18px;
+        font-size: 1.8rem;
         margin-bottom: 30px;
     }
 
@@ -1276,7 +1277,7 @@ input[type="number"] {
         color: #343434;
         font-weight: 500;
         text-align: center;
-        font-size: 15px;
+        font-size: 1.5rem;
         line-height: 21px;
         margin-bottom: 10px;
         letter-spacing: .4px;
@@ -1317,7 +1318,7 @@ input[type="number"] {
     }
 
     &__actions-header {
-        font-size: 13px;
+        font-size: 1.3rem;
         border-bottom: 1px solid #d1d1d1;
     }
 
@@ -1370,7 +1371,7 @@ input[type="number"] {
 
     &__actions-link {
         color: #e88130;
-        font-size: 12px;
+        font-size: 1.2rem;
         margin: 15px 0 10px;
         text-decoration: underline;
 
@@ -1426,7 +1427,7 @@ input[type="number"] {
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
         padding: 10px 25px;
         letter-spacing: .3px;
-        font-size: 18px;
+        font-size: 1.8rem;
         border-radius: 25px;
         margin-top: 15px;
         margin-bottom: 5px;
@@ -1445,7 +1446,7 @@ input[type="number"] {
 //PAYMENT
 .payment, .deposit {
     &__text {
-        font-size: 20px;
+        font-size: 2rem;
         color: #a7a7a7;
     }
 
@@ -1499,7 +1500,7 @@ input[type="number"] {
 
 
 //PAYOUT
-.payout {
+.payout, .crypto {
     width: 100%;
 
     &__top {
@@ -1523,7 +1524,7 @@ input[type="number"] {
 
     &__link {
         color: #f16208;
-        font-size: 20px;
+        font-size: 2rem;
         letter-spacing: .7px;
         text-decoration: underline;
 
@@ -1532,7 +1533,7 @@ input[type="number"] {
         }
 
         &--payeer {
-            font-size: 14px;
+            font-size: 1.4rem;
             font-weight: 500;
             letter-spacing: 1px;
             margin-top: 10px;
@@ -1553,30 +1554,31 @@ input[type="number"] {
     }
 
     &__table {
-        font-size: 20px;
+        font-size: 2rem;
         background-color: white;
         margin-top: 20px;
         border-radius: 25px;
         width: 100%;
         color: #424242;
-        padding: 20px 0 20px;
+        padding: 20px 10px;
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
     }
 
     &__table-content {
         border-collapse: collapse;
         width: 100%;
+        table-layout: fixed;
 
         col:nth-child(1) {
-            width: 22%;
+            width: 21%;
         }
 
         col:nth-child(2) {
-            width: 33%;
+            width: 26%;
         }
 
         col:nth-child(3) {
-            width: 20%;
+            width: 28%;
         }
     }
 
@@ -1585,7 +1587,7 @@ input[type="number"] {
     }
 
     &__table-title {
-        font-size: 20px;
+        font-size: 2rem;
         padding: 30px;
         letter-spacing: .7px;
         text-align: center;
@@ -1593,7 +1595,7 @@ input[type="number"] {
 
     &__table-th {
         font-weight: 500;
-        padding: 15px;
+        padding: 15px 8px;
     }
 
     &__table-tr {
@@ -1601,7 +1603,13 @@ input[type="number"] {
     }
 
     &__table-td {
-        padding: 15px;
+        padding: 15px 8px;
+        border-bottom: 1px solid #d1d1d1;
+        word-wrap: break-word;
+    }
+
+    .payout-status--green {
+        color: rgb(0, 128, 0);
     }
 }
 
@@ -1632,7 +1640,7 @@ input[type="number"] {
     }
 
     &__right-title {
-        font-size: 18px;
+        font-size: 1.8rem;
         text-align: center;
         font-weight: 500;
         letter-spacing: 1px;
@@ -1643,7 +1651,7 @@ input[type="number"] {
     }
 
     &__item {
-        font-size: 17px;
+        font-size: 1.7rem;
         margin-top: 15px;
         letter-spacing: 0.5px;
 
@@ -1665,7 +1673,7 @@ input[type="number"] {
 
     &__form-label {
         color: #424242;
-        font-size: 23px;
+        font-size: 2.3rem;
         font-weight: 500;
         display: flex;
         align-items: center;
@@ -1684,7 +1692,7 @@ input[type="number"] {
     }
 
     &__form-input {
-        font-size: 25px;
+        font-size: 2.5rem;
         color: #008fff;
         font-weight: 700;
         line-height: 49px;
@@ -1708,7 +1716,7 @@ input[type="number"] {
         align-items: center;
         display: flex;
         color: white;
-        font-size: 20px;
+        font-size: 2rem;
         font-weight: 700;
         background-image: linear-gradient(to top, #00c7ff 0%, #0071ff 100%);
         cursor: pointer;
@@ -1722,12 +1730,11 @@ input[type="number"] {
     &__count {
         margin-top: 40px;
         color: #f86400;
-        font-size: 15px;
         font-weight: 500;
     }
 
     &__count-speed {
-        font-size: 24px;
+        font-size: 2.4rem;
         font-weight: 700;
     }
 }
@@ -1752,7 +1759,7 @@ input[type="number"] {
 
 
 //FIAT
-.fiat {
+.fiat, .crypto {
 
     &__content {
         background-color: white;
@@ -1761,15 +1768,16 @@ input[type="number"] {
         align-items: center;
         border-radius: 25px;
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        padding: 20px;
     }
 
     &__content-link {
         color: #f16208;
         text-decoration: underline;
         font-weight: 500;
-        font-size: 20px;
+        font-size: 2rem;
         letter-spacing: .7px;
-        margin-top: 50px;
+        margin-top: 30px;
 
         &:hover {
             text-decoration: none;
@@ -1785,13 +1793,24 @@ input[type="number"] {
 
     &__content-pay {
         margin-top: 40px;
-        font-size: 25px;
+        font-size: 2.5rem;
         font-weight: 500;
         color: #424242;
         letter-spacing: .5px;
     }
 
     &__content-sum {
+        font-weight: 700;
+    }
+
+    &__content-notify {
+        margin-top: 20px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #424242;
+    }
+
+    &__content-mail {
         font-weight: 700;
     }
 
@@ -1802,18 +1821,146 @@ input[type="number"] {
 
     &__content-btn {
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         background-image: linear-gradient(to top, #e65c31 0%, #e98930 100%);
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
         font-weight: 500;
         color: white;
-        padding: 20px 30px;
+        padding: 16px 30px;
         border-radius: 25px;
         cursor: pointer;
+        letter-spacing: .4px;
 
         &:hover {
             background-image: linear-gradient(to bottom, #e65c31 0%, #e98930 100%);
-
         }
+    }
+}
+
+
+//CRYPTO
+.crypto {
+
+    &__content {
+        color: #424242;
+    }
+
+    &__content-crypto {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin-top: 35px;
+        letter-spacing: 1px;
+    }
+
+    &__content-text1 {
+        margin-top: 35px;
+        font-weight: 700;
+        letter-spacing: .3px;
+    }
+
+    &__content-text2 {
+        margin-top: 35px;
+        font-weight: 500;
+    }
+
+    &__content-text2Sum {
+        font-size: 1.8rem;
+        font-weight: 700;
+    }
+
+    &__content-wallet {
+        margin-top: 20px;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: .5px;
+    }
+
+    &__content-btn {
+        margin-bottom: 40px;
+        outline: none;
+    }
+
+    &__content-notify {
+        margin-bottom: 40px;
+    }
+
+    &__content-text3 {
+        color: rgb(0, 128, 0);
+        font-weight: 700;
+        letter-spacing: .3px;
+    }
+
+    &__content-text4 {
+        margin-top: 15px;
+    }
+
+    &__table {
+
+        col:nth-child(1) {
+            width: 12%;
+        }
+
+        col:nth-child(2) {
+            width: 19%;
+        }
+
+        col:nth-child(3) {
+            width: 13%;
+        }
+
+        col:nth-child(4) {
+            width: 19%;
+        }
+
+        col:nth-child(5) {
+            width: 16%;
+        }
+    }
+
+    &__table-link {
+        color: #f16208;
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .deposit-status--green {
+        color: rgb(0, 128, 0);
+    }
+}
+
+
+//PAYOUTS
+.payouts {
+
+    &__text {
+    }
+
+    &__table {
+        font-size: 2rem;
+        background-color: white;
+        margin-top: 20px;
+        border-radius: 10px;
+        width: 100%;
+        color: #424242;
+        padding: 20px 10px;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+    }
+
+    &__table-content {
+    }
+
+    &__table-header {
+    }
+
+    &__table-th {
+    }
+
+    &__table-tr {
+    }
+
+    &__table-td {
     }
 }

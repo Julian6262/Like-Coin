@@ -158,88 +158,141 @@
                     </ul>
                 </div>
 
-                <section class="speedup">
-                    <h1 class="speedup__title">
-                        Увеличить скорость майнинга
+                <section class="crypto">
+                    <h1 class="crypto__title">
+                        Пополнение баланса
                     </h1>
 
-                    <div class="speedup__content">
-                        <div class="speedup__left">
-                            <form class="speedup__form">
-                                <label class="speedup__form-label">
-                                    Введите сумму:
-                                    <span class="speedup__form-inputWrapper">
-                                        <input class="speedup__form-input" id="speedupInput" type="number" value="100"
-                                               autocomplete="off">
-                                    </span>
-                                </label>
-                                <a class="speedup__form-btn" type="submit" href="deposit.html">
-                                    ОПЛАТИТЬ
-                                </a>
-                            </form>
+                    <div class="crypto__content">
+                        <a class="crypto__content-link" href="deposit.html">
+                            << Выбрать другой способ
+                        </a>
 
-                            <p class="speedup__warning">
-                                Внимание!
-                                <br>
-                                Минимальная сумма - 100 руб.
-                                <br>
-                                Максимальная сумма - 50000 руб.
-                            </p>
+                        <h3 class="crypto__content-crypto">
+                            Пополнение через Litecoin
+                        </h3>
 
-                            <p class="speedup__count">
-                                ВАША СКОРОСТЬ УВЕЛИЧИТСЯ НА:
-                                <output class="speedup__count-speed" id="speedupOutput"></output>
-                                МОНЕТ В СЕКУНДУ
-                            </p>
-                        </div>
+                        <p class="crypto__content-text1">
+                            Для Вас сгенерирован персональный адрес Litecoin!
+                        </p>
 
-                        <div class="speedup__right">
-                            <p class="speedup__right-title">
-                                В данный момент:
-                            </p>
+                        <p class="crypto__content-text2">
+                            Отправьте
+                            <span class="crypto__content-text2Sum">0.050648 LTC</span>
+                            на кошелек:
+                        </p>
 
-                            <ul class="speedup__items">
-                                <li class="speedup__item">
-                                    <p class="speedup__item-title">
-                                        Ваша скорость:
-                                    </p>
+                        <h4 class="crypto__content-wallet">
+                            ltc1q9eak2cprnrmje8ty8xphchd2qsj0zy6rdph5p4
+                        </h4>
 
-                                    <p class="speedup__item-text">
-                                        0.001382 монет в секунду
-                                    </p>
-                                </li>
+                        <button class="crypto__content-btn">Скопировать кошелек</button>
 
-                                <li class="speedup__item">
-                                    <p class="speedup__item-title">
-                                        Ваша прибыль за день:
-                                    </p>
+                        <p class="crypto__content-text3">
+                            Ваш баланс будет пополнен автоматически после поступления средств на кошелек.
+                        </p>
 
-                                    <p class="speedup__item-text">
-                                        119.4048 монет
-                                    </p>
-                                </li>
+                        <h4 class="crypto__content-notify">
+                            Информация об оплате будет направлена на e-mail:
+                            <span class="crypto__content-mail">d.baburin62@yandex.ru</span>
+                        </h4>
 
-                                <li class="speedup__item">
-                                    <p class="speedup__item-title">
-                                        Ваша прибыль за месяц:
-                                    </p>
+                        <p class="crypto__content-text4">
+                            - Вы можете отправлять любые суммы, будь то больше указанной или меньше, все они будут
+                            зачислены на Ваш баланс автоматически при поступлении на кошелек.
+                        </p>
 
-                                    <p class="speedup__item-text">
-                                        3701.5488 монет
-                                    </p>
-                                </li>
+                        <p class="crypto__content-text4">
+                            - Ввиду особенностей агрегаторов платежи, которые в рублевом эквиваленте меньше 100 рублей
+                            будут проигнорированы системой.
+                        </p>
 
-                                <li class="speedup__item">
-                                    <p class="speedup__item-title">
-                                        Ваша прибыль за 6 месяцев:
-                                    </p>
+                        <p class="crypto__content-text4">
+                            - Курсы криптовалют постоянно меняются, в связи с этим курс будет зафиксирован в момент
+                            поступления транзакции в сеть, в основном это происходит моментально.
+                        </p>
+                    </div>
 
-                                    <p class="speedup__item-text">
-                                        21851.0784 монет
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="crypto__table">
+                        <h5 class="crypto__table-title">
+                            История ваших LTC транзакций
+                        </h5>
+
+                        <table class="crypto__table-content">
+                            <colgroup span="6">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <tr class="crypto__table-header">
+                                <th class="crypto__table-th">txid</th>
+                                <th class="crypto__table-th">LTC</th>
+                                <th class="crypto__table-th">В рублях</th>
+                                <th class="crypto__table-th">Подтверждений</th>
+                                <th class="crypto__table-th">Статус</th>
+                                <th class="crypto__table-th">Дата операции</th>
+                            </tr>
+
+                            <tr class="crypto__table-tr">
+                                <td class="crypto__table-td">
+                                    <a class="crypto__table-link" href="https://paykassa.pro"
+                                       target="_BLANK">Открыть</a>
+                                </td>
+                                <td class="crypto__table-td">0.06331261</td>
+                                <td class="crypto__table-td">380.34</td>
+                                <td class="crypto__table-td">3 из 3</td>
+                                <td class="crypto__table-td deposit-status">
+                                    Зачислено
+                                </td>
+                                <td class="crypto__table-td">14.09.2023 08:53</td>
+                            </tr>
+
+                            <tr class="crypto__table-tr">
+                                <td class="crypto__table-td">
+                                    <a class="crypto__table-link" href="https://paykassa.pro"
+                                       target="_BLANK">Открыть</a>
+                                </td>
+                                <td class="crypto__table-td">0.06331261</td>
+                                <td class="crypto__table-td">380.34</td>
+                                <td class="crypto__table-td">3 из 3</td>
+                                <td class="crypto__table-td deposit-status">
+                                    Ожидает
+                                </td>
+                                <td class="crypto__table-td">14.09.2023 08:53</td>
+                            </tr>
+
+                            <tr class="crypto__table-tr">
+                                <td class="crypto__table-td">
+                                    <a class="crypto__table-link" href="https://paykassa.pro"
+                                       target="_BLANK">Открыть</a>
+                                </td>
+                                <td class="crypto__table-td">0.06331261</td>
+                                <td class="crypto__table-td">380.34</td>
+                                <td class="crypto__table-td">3 из 3</td>
+                                <td class="crypto__table-td deposit-status">
+                                    Зачислено
+                                </td>
+                                <td class="crypto__table-td">14.09.2023 08:53</td>
+                            </tr>
+
+                            <tr class="crypto__table-tr">
+                                <td class="crypto__table-td">
+                                    <a class="crypto__table-link" href="https://paykassa.pro"
+                                       target="_BLANK">Открыть</a>
+                                </td>
+                                <td class="crypto__table-td">0.06331261</td>
+                                <td class="crypto__table-td">380.34</td>
+                                <td class="crypto__table-td">3 из 3</td>
+                                <td class="crypto__table-td deposit-status">
+                                    Зачислено2
+                                </td>
+                                <td class="crypto__table-td">14.09.2023 08:53</td>
+                            </tr>
+
+                        </table>
                     </div>
                 </section>
 

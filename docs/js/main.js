@@ -1,9 +1,8 @@
 // CALCULATOR
 const multiplier = 0.0000121832359;
 const multiplierDay = 86400;
-const checkCalculator = document.querySelector('.calculator');
 
-if (checkCalculator) {
+if (document.querySelector('.calculator')) {
     const calcOutput = document.getElementById("calc-value");
     const calcInput = document.getElementById("calc-input");
     const speedUp = document.getElementById("sp-up");
@@ -45,9 +44,7 @@ if (checkCalculator) {
 
 
 // SPEEDUP-COUNT
-const speedup = document.querySelector('.speedup');
-
-if (speedup) {
+if (document.querySelector('.speedup')) {
     const speedupInput = document.getElementById("speedupInput");
     const speedupOutput = document.getElementById("speedupOutput");
 
@@ -93,25 +90,25 @@ document.addEventListener('keyup', (e) => {
 // SCROLL/////////////////////////////////////////////
 const menu = document.querySelectorAll(".menu__item--scroll");
 
-menu.forEach((item) => {
+if (menu) {
+    menu.forEach((item) => {
 
-    item.addEventListener("click", (e) => {
+        item.addEventListener("click", (e) => {
 
-        e.preventDefault();
-        let elem = document.getElementById(e.target.getAttribute('href').slice(1));
+            e.preventDefault();
+            let elem = document.getElementById(e.target.getAttribute('href').slice(1));
 
-        document.body.scrollBy({
-            top: elem.getBoundingClientRect().top - 50,
-            behavior: 'smooth'
+            document.body.scrollBy({
+                top: elem.getBoundingClientRect().top - 50,
+                behavior: 'smooth'
+            });
         });
     });
-});
+}
 
 
 // ACCORDEON/////////////////////////////////
-const checkQuestions = document.querySelector('.questions');
-
-if (checkQuestions) {
+if (document.querySelector('.questions')) {
 
     const accordeon = document.querySelector('.questions__items');
     const accordeonTitles = accordeon.querySelectorAll('.questions__header');
@@ -130,3 +127,37 @@ if (checkQuestions) {
         });
     });
 }
+
+
+// TABLE-STATUS/////////////////////////////////
+const payoutStatus = document.querySelectorAll('.payout-status');
+const depositStatus = document.querySelectorAll('.deposit-status');
+
+if (depositStatus) {
+    depositStatus.forEach((item) => {
+        if (item.innerText === 'Зачислено') {
+            item.classList.add('deposit-status--green');
+        }
+    });
+}
+
+if (payoutStatus) {
+    payoutStatus.forEach((item) => {
+        if (item.innerText === 'Выплачено') {
+            item.classList.add('payout-status--green');
+        }
+    });
+}
+
+
+// COPY-WALLET/////////////////////////////////
+const cryptoWallet = document.querySelector('.crypto__content-wallet');
+const cryptoBtn = document.querySelector('.crypto__content-btn');
+
+if (cryptoWallet) {
+    cryptoBtn.addEventListener("click", (e) => {
+        navigator.clipboard.writeText(cryptoWallet.innerText);
+        cryptoBtn.innerText = 'Кошелек скопирован'
+    });
+}
+
