@@ -1049,7 +1049,7 @@ input[type="number"] {
 //ACCOUNT/////////////////////////////////////////////////////////////////
 //ACCOUNT/////////////////////////////////////////////////////////////////
 //ACCOUNT/////////////////////////////////////////////////////////////////
-.account, .payment, .card, .speedup, .deposit, .payout, .fiat, .crypto, .payouts {
+.account, .payment, .card, .speedup, .deposit, .payout, .fiat, .crypto, .payouts, .users {
     width: 910px;
     margin-left: auto;
 
@@ -1933,34 +1933,136 @@ input[type="number"] {
 
 
 //PAYOUTS
-.payouts {
-
+.payouts, .users {
     &__text {
+        color: #a7a7a7;
+        font-size: 20px;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 
     &__table {
-        font-size: 2rem;
         background-color: white;
-        margin-top: 20px;
         border-radius: 10px;
+        font-size: 2rem;
         width: 100%;
         color: #424242;
-        padding: 20px 10px;
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
     }
 
+    &__table-imgPay {
+        width: 24px;
+        height: 24px;
+    }
+
+    &__total {
+        margin-top: 50px;
+        font-size: 2.5rem;
+        padding-left: 30px;
+        padding-bottom: 50px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
     &__table-content {
+        border-collapse: collapse;
+        text-align: center;
+        table-layout: fixed;
+
+
+        col:nth-child(1) {
+            width: 7%;
+        }
+
+        col:nth-child(2) {
+            width: 26%;
+        }
+
+        col:nth-child(3) {
+            width: 16%;
+        }
+
+        col:nth-child(4) {
+            width: 8%;
+        }
+
+        col:nth-child(5) {
+            width: 21%;
+        }
     }
 
     &__table-header {
-    }
-
-    &__table-th {
-    }
-
-    &__table-tr {
+        font-size: 1.5rem;
+        border-bottom: 1px solid #d1d1d1;
+        line-height: 50px;
+        letter-spacing: .7px;
+        color: black;
     }
 
     &__table-td {
+        padding: 15px 8px;
+        border-bottom: 1px solid #d1d1d1;
+        word-wrap: break-word;
+
+        &--left {
+            text-align: left;
+        }
+    }
+
+    &__table-img {
+        display: flex;
+        width: 45px;
+        height: 29px;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+
+        &:hover {
+            filter: grayscale(40%);
+            transition: .3s;
+        }
+
+        &--ok {
+            background-color: #f16208;
+        }
+
+        &--vk {
+            background-color: #2a81f4;
+        }
+
+        &--go {
+            background-color: #b63f31;
+        }
+    }
+
+    &__table-svg {
+        width: 14px;
+        height: 14px;
+        fill: white;
+    }
+
+    &__stars {
+        color: red;
+    }
+}
+
+
+//USERS
+.users {
+
+    &__table-content {
+        col:nth-child(1) {
+            width: 1%;
+        }
+
+        col:nth-child(2) {
+            width: 4%;
+        }
+
+        col:nth-child(3) {
+            width: 16%;
+        }
     }
 }
