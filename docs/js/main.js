@@ -150,14 +150,23 @@ if (payoutStatus) {
 }
 
 
-// COPY-WALLET/////////////////////////////////
+// COPY/////////////////////////////////
 const cryptoWallet = document.querySelector('.crypto__content-wallet');
 const cryptoBtn = document.querySelector('.crypto__content-btn');
+const referralsInput = document.querySelector('.referrals__form-input');
+const referralsBtn = document.querySelector('.referrals__form-btn');
 
 if (cryptoWallet) {
-    cryptoBtn.addEventListener("click", (e) => {
+    cryptoBtn.addEventListener("click", () => {
         navigator.clipboard.writeText(cryptoWallet.innerText);
         cryptoBtn.innerText = 'Кошелек скопирован'
+    });
+}
+
+if (referralsInput) {
+    referralsBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(referralsInput.value);
+        referralsBtn.innerText = 'Ссылка скопирована'
     });
 }
 

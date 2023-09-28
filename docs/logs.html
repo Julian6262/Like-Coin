@@ -9,7 +9,7 @@
     <meta name="keywords" content="Like Coin, лайк коин">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.min.css">
-    <title>Аккаунт - Выплата на Карты (Россия)</title>
+    <title>Аккаунт - Настройки</title>
 </head>
 
 <body>
@@ -158,95 +158,53 @@
                     </ul>
                 </div>
 
-                <section class="payout">
+                <section class="logs">
+                    <h1 class="logs__title">
+                        История входов
+                    </h1>
 
-                    <div class="payout__top">
-                        <div class="payout__left">
-                            <h1 class="payout__title">
-                                Выплата на Карты (Россия)
-                            </h1>
+                    <p class="logs__text">
+                        История входов в аккаунт за последние 10 дней
+                    </p>
 
-                            <a class="payout__link" href="payment.html">
-                                << Выбрать другой способ
-                            </a>
-
-                            <form class="form">
-                                <label class="form__label form__label--payout">
-                                    Введите номер карты: [Пример: 11112222333444]
-                                    <input type="number" class="form__input">
-                                </label>
-
-                                <label class="form__label form__label--payout">
-                                    Сумма: [Минимум 1100 руб.]
-                                    <input type="number" class="form__input">
-                                </label>
-
-                                <button class="form__btn">ЗАКАЗАТЬ ВЫПЛАТУ</button>
-                            </form>
-                        </div>
-
-                        <div class="payout__right">
-                            <img class="payout__right-img" src="img/visa.png" alt="visa">
-
-                            <p class="payout__text payout__text--commission">
-                                Комиссия платежного шлюза составляет 5%
-                            </p>
-
-                            <p class="payout__text">
-                                Выплаты осуществляются через платежные шлюзы.
-                                Срок выплаты составляет от 5 минут до 12 часов.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="payout__table">
-                        <h5 class="payout__table-title">
-                            Ваши выплаты:
-                        </h5>
-
-                        <table class="payout__table-content">
+                    <div class="logs__table">
+                        <table class="logs__table-content">
                             <colgroup span="4">
                                 <col>
                                 <col>
                                 <col>
                                 <col>
                             </colgroup>
-                            <tr class="payout__table-header">
-                                <th class="payout__table-th">Сумма</th>
-                                <th class="payout__table-th">Карта</th>
-                                <th class="payout__table-th">Дата</th>
-                                <th class="payout__table-th">Статус</th>
+                            <tr class="logs__table-header">
+                                <th class="logs__table-th">Код</th>
+                                <th class="logs__table-th">Город</th>
+                                <th class="logs__table-th">IP</th>
+                                <th class="logs__table-th">Дата</th>
                             </tr>
 
-                            <tr class="payout__table-tr">
-                                <td class="payout__table-td">11111 ₽</td>
-                                <td class="payout__table-td">P10999798341</td>
-                                <td class="payout__table-td">15.09.2023 17:07:14</td>
-                                <td class="payout__table-td payout-status">Выплачено</td>
+                            <tr class="logs__table-tr">
+                                <td class="logs__table-td">RU</td>
+                                <td class="logs__table-td">Котельники</td>
+                                <td class="logs__table-td">178.218.117.127</td>
+                                <td class="logs__table-td">21.09.2023 08:29</td>
                             </tr>
 
-                            <tr class="payout__table-tr">
-                                <td class="payout__table-td">11111 ₽</td>
-                                <td class="payout__table-td">P10999798341</td>
-                                <td class="payout__table-td">15.09.2023 17:07:14</td>
-                                <td class="payout__table-td payout-status">Выплачено1</td>
+                            <tr class="logs__table-tr">
+                                <td class="logs__table-td">RU</td>
+                                <td class="logs__table-td">Котельники</td>
+                                <td class="logs__table-td">178.218.117.127</td>
+                                <td class="logs__table-td">21.09.2023 08:29</td>
                             </tr>
 
-                            <tr class="payout__table-tr">
-                                <td class="payout__table-td">11111 ₽</td>
-                                <td class="payout__table-td">P10999798341</td>
-                                <td class="payout__table-td">15.09.2023 17:07:14</td>
-                                <td class="payout__table-td payout-status">Выплачено</td>
-                            </tr>
-
-                            <tr class="payout__table-tr">
-                                <td class="payout__table-td">11111 ₽</td>
-                                <td class="payout__table-td">P10999798341</td>
-                                <td class="payout__table-td">15.09.2023 17:07:14</td>
-                                <td class="payout__table-td payout-status">Выплаdчено</td>
+                            <tr class="logs__table-tr">
+                                <td class="logs__table-td">RU</td>
+                                <td class="logs__table-td">Котельники</td>
+                                <td class="logs__table-td">178.218.117.127</td>
+                                <td class="logs__table-td">21.09.2023 08:29</td>
                             </tr>
 
                         </table>
+
                     </div>
 
                 </section>
