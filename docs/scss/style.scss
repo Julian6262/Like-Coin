@@ -928,20 +928,6 @@ input[type="number"] {
 
 //QUESTIONS
 .questions {
-    width: 910px;
-    margin-left: auto;
-    color: #424242;
-
-
-    &__title {
-        color: #343434;
-        font-size: 2.8rem;
-        font-weight: 700;
-        letter-spacing: 2px;
-        text-align: center;
-        margin-top: 0;
-    }
-
     &__hint {
         color: #5b5b5b;
         font-weight: 500;
@@ -1073,7 +1059,7 @@ input[type="number"] {
 //ACCOUNT/////////////////////////////////////////////////////////////////
 //ACCOUNT/////////////////////////////////////////////////////////////////
 //ACCOUNT/////////////////////////////////////////////////////////////////
-.account, .payment, .card, .speedup, .deposit,
+.account, .questions, .payment, .card, .speedup, .deposit,
 .payout, .fiat, .crypto, .payouts, .users, .logs,
 .referrals {
     width: 910px;

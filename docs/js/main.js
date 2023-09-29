@@ -170,3 +170,68 @@ if (referralsInput) {
     });
 }
 
+
+// SELECT/////////////////////////////////
+/////////////////////////////////////////// Сортировка через Select /////////////////////////////////////////////
+const table = document.querySelector(".referrals__table-contentSort");
+
+if (table) {
+    let tbody = table.querySelector(".referrals__table-tbody");
+    let select = document.querySelector(".referrals__formSort-select");
+    let rows = [...tbody.rows];
+    let sortDirection = "asc";
+    let columnIndex = select.options.selectedIndex;
+
+    function sortTable() {
+        rows.sort((a, b) => {
+
+            let aValue = a.cells[columnIndex].textContent;
+            let bValue = b.cells[columnIndex].textContent;
+
+            if (columnIndex === 3) {
+                aValue = aValue.split(" ")[0];
+                bValue = bValue.split(" ")[0];
+            } else if (columnIndex === 4 || columnIndex === 5) {
+                let dateTimeA = aValue.split(" ")
+                let dateTimeB = bValue.split(" ")
+                let dateA = dateTimeA[0].split(".")
+                let dateB = dateTimeB[0].split(".")
+
+                aValue = Date.parse(`${dateA[2]}-${dateA[1]}-${dateA[0]}T${dateTimeA[1]}`);
+                bValue = Date.parse(`${dateB[2]}-${dateB[1]}-${dateB[0]}T${dateTimeB[1]}`);
+            }
+
+            if (columnIndex === 1) {                // сортировка по буквам
+                aValue = aValue.toUpperCase();
+                bValue = bValue.toUpperCase();
+
+                if (sortDirection === "asc") {
+                    return aValue > bValue ? 1 : -1;
+                } else {
+                    return bValue > aValue ? 1 : -1;
+                }
+
+            } else {                                // сортировка по цифрам
+
+                if (sortDirection === "asc") {
+                    return aValue - bValue;
+                } else {
+                    return bValue - aValue;
+                }
+
+            }
+        });
+
+        tbody.remove();
+        tbody = document.createElement("tbody");
+        rows.forEach((row) => tbody.appendChild(row));
+        table.appendChild(tbody);
+    }
+
+    sortTable();
+
+    select.addEventListener("change", function (e) {
+        columnIndex = e.target.options.selectedIndex;
+        sortTable();
+    });
+}
