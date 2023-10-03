@@ -1061,7 +1061,7 @@ input[type="number"] {
 //ACCOUNT/////////////////////////////////////////////////////////////////
 .account, .questions, .payment, .card, .speedup, .deposit,
 .payout, .fiat, .crypto, .payouts, .users, .logs,
-.referrals {
+.referrals, .history, .supports {
     width: 910px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -1598,7 +1598,7 @@ input[type="number"] {
         border-radius: 25px;
         width: 100%;
         color: #424242;
-        padding: 20px 10px;
+        padding: 20px 10px 40px;
         box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
     }
 
@@ -2141,7 +2141,7 @@ input[type="number"] {
 
 
 //REFERRALS
-.referrals {
+.referrals, .history, .supports {
     font-size: 1.4rem;
     font-weight: 500;
     color: #424242;
@@ -2243,7 +2243,6 @@ input[type="number"] {
         border-collapse: collapse;
         width: 100%;
         table-layout: fixed;
-        margin-bottom: 30px;
     }
 
     &__table-contentSort {
@@ -2274,7 +2273,7 @@ input[type="number"] {
     }
 
     &__table-td {
-        padding: 15px 8px;
+        padding: 8px 8px;
         border-bottom: 1px solid #d1d1d1;
         word-wrap: break-word;
         text-align: center;
@@ -2284,6 +2283,7 @@ input[type="number"] {
 
     &__table-link {
         transition: .3s;
+        line-height: 50px;
         color: #f16208;
 
         &:hover {
@@ -2298,10 +2298,6 @@ input[type="number"] {
         font-size: 1.4rem;
         font-weight: 700;
         letter-spacing: .7px;
-    }
-
-    &__formSort-label {
-
     }
 
     &__level {
@@ -2321,5 +2317,145 @@ input[type="number"] {
         margin-left: 15px;
         padding: 3px 10px;
         outline: none;
+    }
+}
+
+
+//HISTORY
+.history {
+    &__table {
+        padding-top: 30px;
+        font-size: 1.7rem;
+    }
+
+    &__table-content {
+        margin-bottom: 0;
+
+        col:nth-child(1) {
+            width: 13%;
+        }
+
+        col:nth-child(2) {
+            width: 13%;
+        }
+
+        col:nth-child(3) {
+            width: 53%;
+        }
+    }
+
+    &__table-header {
+        font-size: 2rem;
+    }
+
+    &__table-td {
+        padding: 15px 8px;
+
+        &:nth-child(3) {
+            font-weight: 700;
+        }
+    }
+
+    &__table-i {
+        font-weight: 400;
+    }
+
+    &-status {
+        font-weight: 700;
+    }
+
+    &-status--green {
+        color: rgb(5, 174, 29);
+    }
+
+    &-status--red {
+        color: rgb(177, 6, 6);
+    }
+}
+
+
+//SUPPORTS
+.supports {
+    &__form {
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        margin-top: 40px;
+    }
+
+    &__form-title {
+        font-size: 2rem;
+        margin: 35px 0;
+    }
+
+    &__form-label {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        letter-spacing: 1px;
+        width: 70%;
+    }
+
+    &__form-input, &__form-textarea {
+        margin-top: 10px;
+        border-radius: 0;
+        border: 2px solid #e77512;
+        box-shadow: 10px 12px 14px 6px rgba(0, 0, 0, .09);
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #424242;
+    }
+
+    &__form-textarea {
+        width: 90%;
+        margin: 10px auto;
+        height: 200px;
+        outline: none;
+        padding: 10px 15px;
+        resize: none;
+        text-align: left;
+    }
+
+    &__form-btn {
+        margin-top: 20px;
+        margin-bottom: 35px;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    &__table {
+        margin-top: 50px;
+        padding-top: 15px;
+    }
+
+    &__table-content {
+        col:nth-child(1) {
+            width: 5%;
+        }
+
+        col:nth-child(2) {
+            width: 9%;
+        }
+
+        col:nth-child(3) {
+            width: 3%;
+        }
+    }
+
+    &__table-td {
+        &:last-child {
+            font-weight: 500;
+        }
+    }
+
+    &-status--green {
+        color: rgb(5, 174, 29);
+    }
+
+    &-status--red {
+        color: rgb(177, 6, 6);
     }
 }

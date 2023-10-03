@@ -167,36 +167,28 @@
                         Вы будете получать награду за каждого пользователя, который пришел по вашей уникальной ссылке и
                         увеличил скорость!
                     </p>
-
                     <p class="referrals__text1">
                         Получите +0.000990 к скорости за первое пополнение другом на любую сумму!
                     </p>
-
                     <p class="referrals__text2">
                         Ваш доход ничем не ограничен. Даже несколько приглашенных могут принести вам ощутимые деньги.
                     </p>
-
                     <p class="referrals__text2">
                         Ваша награда сразу попадает вам на баланс и вы сразу можете выплатить эти деньги или
                         использовать для увеличения своей скорости.
                     </p>
-
                     <p class="referrals__text3 referrals__text3--mt">
                         Вы получите 10% от потраченных средств рефералами 1-го уровня;
                     </p>
-
                     <p class="referrals__text3">
                         Вы получите 5% от потраченных средств рефералами 2-го уровня;
                     </p>
-
                     <p class="referrals__text3">
                         Вы получите 3% от потраченных средств рефералами 3-го уровня;
                     </p>
-
                     <p class="referrals__text3">
                         Вы получите 2% от потраченных средств рефералами 4-го уровня;
                     </p>
-
                     <p class="referrals__text3">
                         Вы получите 1% от потраченных средств рефералами 5-го уровня;
                     </p>
@@ -211,13 +203,12 @@
                                    readonly>
                         </label>
 
-                        <button class="referrals__form-btn">Cкопировать ссылку</button>
+                        <button class="referrals__form-btn">Скопировать ссылку</button>
                     </form>
 
                     <p class="referrals__text3 referrals__text3--center">
                         Разместите свою реф-ссылку в соц. сети:
                     </p>
-
                     <p class="referrals__text3">
                         В связи с большим количеством мошенников и повторных регистраций под собой ради бонуса, рефералы
                         (друзья), которые не делали депозитов, считаются неактивными, за их внутренние покупки
@@ -285,12 +276,13 @@
                         <form class="referrals__formSort">
                             <label class="referrals__formSort-label">
                                 Сортировать рефералов:
-                                <select class="referrals__formSort-select" onchange="this.form.submit ()">
-                                    <option value="1">По ID</option>
+                                <select class="referrals__formSort-select">
+                                    <option value="0">По ID</option>
+                                    <option value="1">По имени</option>
+                                    <option value="2">По кол-ву рефералов</option>
                                     <option value="3">По доходу</option>
-                                    <option value="4">По кол-ву рефералов</option>
+                                    <option value="4">По дате регистрации</option>
                                     <option value="5">По последней активности</option>
-                                    <option value="6">По дате регистрации</option>
                                 </select>
                             </label>
                         </form>
@@ -308,6 +300,7 @@
                                 <col>
                                 <col>
                             </colgroup>
+                            <thead class="referrals__table-thead">
                             <tr class="referrals__table-header">
                                 <th class="referrals__table-th">ID</th>
                                 <th class="referrals__table-th">Профиль</th>
@@ -316,20 +309,22 @@
                                 <th class="referrals__table-th">Зарегистрирован</th>
                                 <th class="referrals__table-th">Последний вход</th>
                             </tr>
+                            </thead>
 
+                            <tbody class="referrals__table-tbody">
                             <tr class="referrals__table-tr">
-                                <td class="referrals__table-td">1672515</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">101</td>
+                                <td class="referrals__table-td">167251</td>
+                                <td class="referrals__table-td">Аыитрий Рублев</td>
+                                <td class="referrals__table-td">13301</td>
                                 <td class="referrals__table-td">1000 руб.</td>
                                 <td class="referrals__table-td">21.09.2023 09:29</td>
-                                <td class="referrals__table-td">21.09.2023 10:29</td>
+                                <td class="referrals__table-td">21.09.1999 10:29</td>
                             </tr>
 
                             <tr class="referrals__table-tr">
-                                <td class="referrals__table-td">3672515</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">3</td>
+                                <td class="referrals__table-td">36725151</td>
+                                <td class="referrals__table-td">авитрий Рублев</td>
+                                <td class="referrals__table-td">344</td>
                                 <td class="referrals__table-td">5 руб.</td>
                                 <td class="referrals__table-td">21.09.2023 07:29</td>
                                 <td class="referrals__table-td">21.09.2023 06:29</td>
@@ -337,8 +332,8 @@
 
                             <tr class="referrals__table-tr">
                                 <td class="referrals__table-td">2672515</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">2</td>
+                                <td class="referrals__table-td">ААитрий Рублев</td>
+                                <td class="referrals__table-td">23</td>
                                 <td class="referrals__table-td">3 руб.</td>
                                 <td class="referrals__table-td">20.09.2023 08:29</td>
                                 <td class="referrals__table-td">19.09.2023 08:29</td>
@@ -346,17 +341,17 @@
 
                             <tr class="referrals__table-tr">
                                 <td class="referrals__table-td">5672115</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
+                                <td class="referrals__table-td">Даитрий Рублев</td>
                                 <td class="referrals__table-td">1</td>
                                 <td class="referrals__table-td">1 руб.</td>
                                 <td class="referrals__table-td">10.09.2023 08:29</td>
-                                <td class="referrals__table-td">09.09.2023 08:29</td>
+                                <td class="referrals__table-td">09.09.2223 08:29</td>
                             </tr>
 
                             <tr class="referrals__table-tr">
                                 <td class="referrals__table-td">1622525</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">100</td>
+                                <td class="referrals__table-td">вритрий Рублев</td>
+                                <td class="referrals__table-td">1010</td>
                                 <td class="referrals__table-td">1000 руб.</td>
                                 <td class="referrals__table-td">21.08.2023 08:29</td>
                                 <td class="referrals__table-td">21.07.2023 08:29</td>
@@ -364,31 +359,13 @@
 
                             <tr class="referrals__table-tr">
                                 <td class="referrals__table-td">1272515</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
+                                <td class="referrals__table-td">пВитрий Рублев</td>
                                 <td class="referrals__table-td">10</td>
                                 <td class="referrals__table-td">100 руб.</td>
                                 <td class="referrals__table-td">21.09.2021 08:35</td>
                                 <td class="referrals__table-td">21.09.2022 08:36</td>
                             </tr>
-
-                            <tr class="referrals__table-tr">
-                                <td class="referrals__table-td">12725111</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">1</td>
-                                <td class="referrals__table-td">10 руб.</td>
-                                <td class="referrals__table-td">21.07.2021 09:35</td>
-                                <td class="referrals__table-td">21.06.2022 07:36</td>
-                            </tr>
-
-                            <tr class="referrals__table-tr">
-                                <td class="referrals__table-td">1272515</td>
-                                <td class="referrals__table-td">Дмитрий Рублев</td>
-                                <td class="referrals__table-td">10000</td>
-                                <td class="referrals__table-td">10000 руб.</td>
-                                <td class="referrals__table-td">21.01.2021 08:35</td>
-                                <td class="referrals__table-td">21.02.2022 08:36</td>
-                            </tr>
-
+                            </tbody>
                         </table>
 
                     </div>

@@ -132,6 +132,8 @@ if (document.querySelector('.questions')) {
 // TABLE-STATUS/////////////////////////////////
 const payoutStatus = document.querySelectorAll('.payout-status');
 const depositStatus = document.querySelectorAll('.deposit-status');
+const historyStatus = document.querySelectorAll('.history-status');
+const supportsStatus = document.querySelectorAll('.supports-status');
 
 if (depositStatus) {
     depositStatus.forEach((item) => {
@@ -145,6 +147,27 @@ if (payoutStatus) {
     payoutStatus.forEach((item) => {
         if (item.innerText === 'Выплачено') {
             item.classList.add('payout-status--green');
+        }
+    });
+}
+
+if (historyStatus) {
+    historyStatus.forEach((item) => {
+        let itemText = item.innerText.split(" ")[0];
+        if (itemText === '+') {
+            item.classList.add('history-status--green');
+        } else if (itemText === '-') {
+            item.classList.add('history-status--red');
+        }
+    });
+}
+
+if (supportsStatus) {
+    supportsStatus.forEach((item) => {
+        if (item.innerText === 'Открыто') {
+            item.classList.add('supports-status--green');
+        } else if (item.innerText === 'Закрыто') {
+            item.classList.add('supports-status--red');
         }
     });
 }
@@ -172,14 +195,13 @@ if (referralsInput) {
 
 
 // SELECT/////////////////////////////////
-/////////////////////////////////////////// Сортировка через Select /////////////////////////////////////////////
 const table = document.querySelector(".referrals__table-contentSort");
 
 if (table) {
     let tbody = table.querySelector(".referrals__table-tbody");
     let select = document.querySelector(".referrals__formSort-select");
     let rows = [...tbody.rows];
-    let sortDirection = "asc";
+    let sortDirection = "desc";
     let columnIndex = select.options.selectedIndex;
 
     function sortTable() {
