@@ -22,7 +22,7 @@ body {
     color: black;
 }
 
-.wrapper{
+.wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -48,4 +48,14 @@ li {
     max-width: 1210px; //увеличить на 30px
     margin: 0 auto;
     padding: 0 15px;
+}
+
+.container-flex {
+    display: flex;
+    flex-direction: column;
+    max-width: 1210px; //увеличить на 30px
+    margin: 0 auto;
+    padding: 0 15px;
+    flex: 1;
+    align-items: center;
 }

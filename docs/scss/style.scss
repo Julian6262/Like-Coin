@@ -1,17 +1,21 @@
 //MAIN
 .main-pages {
     background-color: #f1f1f1;
-    flex: 1 1 auto;
+    flex: 1;
     display: flex;
 }
 
 .main-first {
-    flex: 1 1 auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .main {
     min-height: 100%;
     display: flex;
+    width: 100%;
+    flex: 1;
 }
 
 
@@ -103,7 +107,7 @@
 //SIDEBAR
 .sidebar {
     min-width: 230px;
-    margin-right: 40px;
+    margin-right: 10px;
     background-color: white;
     position: relative;
     z-index: 0;
@@ -215,6 +219,7 @@
         justify-content: space-between;
     }
 
+
     &__logo {
         padding-left: 38px;
     }
@@ -246,8 +251,8 @@
     }
 
     &__item-btn {
-        padding: 9px 20px;
-        border-radius: 25px;
+        padding: 15px 27px;
+        border-radius: 10px;
         background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
 
         &:hover {
@@ -321,17 +326,25 @@
 
 //TOP
 .top {
-    background: url("../img/bg-t.jpg") no-repeat center;
+    background: url("../img/bg-t.jpg") no-repeat center / cover;
     //background: image-set(
     //        url("../img/main-header-bg.avif") type("image/avif"),
     //        url("../img/main-header-bg.jpg") type("image/jpeg")) no-repeat center;
-    background-size: cover;
     padding-top: 150px;
     padding-bottom: 150px;
 
     &__inner {
         display: flex;
         justify-content: space-around;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__img {
+        position: absolute;
+        z-index: -10;
+        opacity: 7%;
+        animation: myAnim1 60s linear 0s infinite normal forwards;
     }
 
     &__content {
@@ -341,7 +354,7 @@
     }
 
     &__title {
-        font-size: 5.5rem;
+        font-size: 7rem;
         font-weight: 700;
         line-height: 71.5px;
         text-transform: uppercase;
@@ -503,8 +516,7 @@
 
 //START
 .start {
-    background: url("../img/bg2.jpg") no-repeat center;
-    background-size: cover;
+    background: url("../img/bg2.jpg") no-repeat center / cover;
     text-align: center;
 
 
@@ -556,8 +568,7 @@
 
 //CALCULATOR
 .calculator {
-    background: url("../img/bg-b.jpg") no-repeat center;
-    background-size: cover;
+    background: url("../img/bg-b.jpg") no-repeat center / cover;
     text-align: center;
 
     &__title {
@@ -693,8 +704,7 @@
             top: -4px;
             left: 0;
             position: absolute;
-            background: url("../img/sprite.svg#check") no-repeat center;
-            background-size: cover;
+            background: url("../img/sprite.svg#check") no-repeat center / cover;
             width: 30px;
             height: 30px;
         }
@@ -768,27 +778,67 @@ input[type="number"] {
 
 //SUPPORT
 .support {
-    width: 800px;
-    margin: 0 auto;
+    background: url("../img/bg2.jpg") no-repeat center / cover;
+    padding: 70px 0;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    &__top-text1 {
+        font-size: 1.8rem;
+    }
+
+    &__top-text2 {
+        font-size: 4rem;
+        letter-spacing: 1px;
+        line-height: 50px;
+    }
+
+    &__img {
+        margin-top: 50px;
+        margin-bottom: 70px;
+    }
 
     &__text {
-        margin-bottom: 95px;
-        margin-top: 95px;
         color: #0971fe;
-        font-size: 2.5rem;
-        font-weight: 500;
-        line-height: 50px;
+        font-size: 2rem;
+        font-weight: 700;
         text-align: center;
+        line-height: 40px;
+    }
+
+    &__top-btn {
+        padding: 18px 65px;
+        border-radius: 10px;
+        letter-spacing: .6px;
+        color: white;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        font-weight: 700;
+        background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
+
+        &:hover {
+            color: white;
+            background-image: linear-gradient(to bottom, #02A3FE 0%, #0971fe 100%);
+        }
     }
 }
 
 
+//MAIN
 .main {
-
     &__content {
         width: 637px;
         margin: 50px 0;
-
     }
 
     &__content-top {
@@ -962,7 +1012,6 @@ input[type="number"] {
         position: relative;
         outline: none;
 
-
         &:hover {
             background-color: #dedede;
             transition: .3s;
@@ -1063,9 +1112,12 @@ input[type="number"] {
 .account, .questions, .payment, .card, .speedup, .deposit,
 .payout, .fiat, .crypto, .payouts, .users, .logs,
 .referrals, .history, .supports, .news {
-    width: 910px;
     margin-top: 50px;
     margin-bottom: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 
     &__title {
         color: #343434;
@@ -1073,11 +1125,11 @@ input[type="number"] {
         font-size: 2.9rem;
         letter-spacing: 2px;
         margin-top: 0;
+        text-align: center;
     }
 }
 
 .account {
-
     &__bonus {
         color: #424242;
         font-weight: 700;
@@ -1113,10 +1165,6 @@ input[type="number"] {
     &__mining-top {
         display: flex;
         justify-content: space-between;
-    }
-
-    &__mining-left {
-
     }
 
     &__mining-right {
@@ -1298,11 +1346,11 @@ input[type="number"] {
         display: flex;
         color: #424242;
         justify-content: space-between;
+        gap: 20px;
     }
 
     &__actions-item, &__details-item {
         background-color: white;
-        width: 435px;
         border-radius: 25px;
         padding-top: 15px;
         padding-bottom: 15px;
@@ -1487,6 +1535,7 @@ input[type="number"] {
     &__text {
         font-size: 2rem;
         color: #a7a7a7;
+        text-align: center;
     }
 
     &__items {
@@ -1655,7 +1704,6 @@ input[type="number"] {
 
 //SPEEDUP
 .speedup {
-
     &__content {
         background-color: white;
         margin-top: 30px;
@@ -1799,7 +1847,6 @@ input[type="number"] {
 
 //FIAT
 .fiat, .crypto {
-
     &__content {
         background-color: white;
         display: flex;
@@ -1879,7 +1926,6 @@ input[type="number"] {
 
 //CRYPTO
 .crypto {
-
     &__content {
         color: #424242;
     }
@@ -2089,7 +2135,6 @@ input[type="number"] {
 
 //USERS
 .users {
-
     &__table-content {
         col:nth-child(1) {
             width: 1%;
@@ -2108,7 +2153,6 @@ input[type="number"] {
 
 //LOGS
 .logs {
-
     &__text {
         color: #0971fe;
     }
@@ -2146,6 +2190,7 @@ input[type="number"] {
     font-size: 1.4rem;
     font-weight: 500;
     color: #424242;
+    text-align: center;
 
     &__text {
         color: #0971fe;
@@ -2184,7 +2229,6 @@ input[type="number"] {
         line-height: 80px;
         font-size: 2rem;
         font-weight: 700;
-        text-align: center;
     }
 
     &__form {
@@ -2502,5 +2546,56 @@ input[type="number"] {
         &:hover {
             background-image: linear-gradient(to bottom, #02A3FE 0%, #0971fe 100%);
         }
+    }
+}
+
+
+//ANIMATIONS
+@keyframes myAnim1 {
+    0% {
+        transform: translate(0);
+        rotate: 10deg;
+    }
+
+    10% {
+        transform: translate(-2px, -2px);
+    }
+
+    20% {
+        transform: translate(2px, -2px);
+    }
+
+    30% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(2px, 2px);
+    }
+
+    50% {
+        transform: translate(-2px, -2px);
+        rotate: -10deg;
+    }
+
+    60% {
+        transform: translate(2px, -2px);
+    }
+
+    70% {
+        transform: translate(-2px, 2px);
+    }
+
+    80% {
+        transform: translate(-2px, -2px);
+    }
+
+    90% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+        rotate: 10deg;
     }
 }
