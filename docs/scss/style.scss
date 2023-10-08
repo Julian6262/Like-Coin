@@ -19,6 +19,48 @@
 }
 
 
+//ONLINE
+.online {
+    background: linear-gradient(to bottom, #02A3FE 0%, #015ee0 100%);
+    color: white;
+    width: 110px;
+    height: 40px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    transform: rotate(-90deg);
+    position: fixed;
+    left: -50px;
+    top: 40%;
+    transition: left .5s;
+    z-index: 100;
+    box-shadow: -5px 8px 12px 4px rgba(0, 0, 0, .09);
+
+    &__text {
+        position: relative;
+        margin: 0 0 3px 19px;
+
+        &::before {
+            content: url("../img/sprite.svg#user-online");
+            position: absolute;
+            bottom: 0;
+            left: -23px;
+            width: 21px;
+            height: 21px;
+        }
+    }
+
+    &:hover {
+        left: -46px;
+        transition: left .5s;
+    }
+}
+
+
 //FORM
 .form {
     margin: 30px 0 40px;
@@ -251,14 +293,18 @@
     }
 
     &__item-btn {
-        padding: 15px 27px;
+        margin: 0 20px;
+        width: 164px;
+        height: 48px;
         border-radius: 10px;
-        background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
 
-        &:hover {
-            color: white;
-            background-image: linear-gradient(to bottom, #02A3FE 0%, #0971fe 100%);
+        &:last-child {
+            width: 96px;
         }
+    }
+
+    &__item-link {
+        border-radius: 10px;
     }
 }
 
@@ -405,7 +451,6 @@
 
     &__statistic-info {
         color: #0971fe;
-
     }
 
     &__statistic-rname {
@@ -432,18 +477,141 @@
         letter-spacing: 0.5px;
     }
 
-    &__statistic-link {
-        border-radius: 25px;
-        padding: 15px 40px;
-        box-shadow: 9px 14px 10px 2px rgba(0, 0, 0, .09);
-        background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
-        margin-bottom: 10px;
+    &__statistic-linkBtn {
+        width: 125px;
+        height: 48px;
+        margin-bottom: 15px;
 
-        &:hover {
-            background-image: linear-gradient(to bottom, #02A3FE 0%, #0971fe 100%);
+        &:first-child {
+            width: 270px;
         }
     }
+
+    &__statistic-link {
+        background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
+        box-shadow: 8px 13px 15px rgba(0, 0, 0, .3);
+        border-radius: 20px;
+    }
 }
+
+
+//GLASSMORPHIC
+.top__statistic-linkBtn, .menu__item-btn {
+    position: relative;
+}
+
+.top__statistic-linkBtn a, .menu__item-btn a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    backdrop-filter: blur(15px); //для прозрачной кнопки
+}
+
+.top__statistic-linkBtn:hover a, .menu__item-btn:hover a {
+    letter-spacing: 3px;
+}
+
+.top__statistic-linkBtn a:before, .menu__item-btn a:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+    transform: skewX(45deg) translate(0);
+    transition: 0.5s;
+    filter: blur(0px);
+}
+
+.top__statistic-linkBtn:hover a:before, .menu__item-btn:hover a:before {
+    transform: skewX(45deg) translate(200px);
+}
+
+/////////заполнение цветом при наведении/////////
+.menu__item-btn a:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transition: 0.5s;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.menu__item-btn:hover a:after {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu__item-btn a:after,
+.menu__item-btn:before,
+.menu__item-btn:after {
+    background: #419cec;
+    box-shadow: 0 0 5px #419cec, 0 0 15px #419cec, 0 0 30px #419cec, 0 0 60px #419cec;
+}
+
+/////////заполнение цветом при наведении/////////
+
+///////нижний подсвет////////
+.top__statistic-linkBtn:before, .menu__item-btn:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    bottom: -2px;
+    width: 30px;
+    height: 10px;
+    background: #419cec;
+    box-shadow: 0 0 5px #419cec, 0 0 15px #419cec, 0 0 30px #419cec, 0 0 60px #419cec;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.top__statistic-linkBtn:hover:before, .menu__item-btn:hover:before {
+    bottom: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+/////нижний подсвет////////
+
+/////верхний подсвет////////
+.menu__item-btn:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+    top: -2px;
+    width: 30px;
+    height: 10px;
+    background: #419cec;
+    box-shadow: 0 0 5px #419cec, 0 0 15px #419cec, 0 0 30px #419cec, 0 0 60px #419cec;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.menu__item-btn:hover:after {
+    top: 0;
+    height: 50%;
+    width: 80%;
+    border-radius: 30px;
+}
+
+/////верхний подсвет////////
 
 
 //RULES
@@ -786,18 +954,18 @@ input[type="number"] {
     align-items: center;
     flex: 1;
 
-    &__top {
+    &__bottom {
         display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
     }
 
-    &__top-text1 {
+    &__bottom-text1 {
         font-size: 1.8rem;
     }
 
-    &__top-text2 {
+    &__bottom-text2 {
         font-size: 4rem;
         letter-spacing: 1px;
         line-height: 50px;
@@ -810,13 +978,13 @@ input[type="number"] {
 
     &__text {
         color: #0971fe;
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: 700;
         text-align: center;
         line-height: 40px;
     }
 
-    &__top-btn {
+    &__bottom-btn {
         padding: 18px 65px;
         border-radius: 10px;
         letter-spacing: .6px;
@@ -838,7 +1006,7 @@ input[type="number"] {
 .main {
     &__content {
         width: 637px;
-        margin: 50px 0;
+        margin: 50px 0 50px 35px;
     }
 
     &__content-top {
@@ -1602,6 +1770,7 @@ input[type="number"] {
 
     &__left {
         width: 522px;
+        text-align: center;
     }
 
     &__right {
@@ -1833,6 +2002,7 @@ input[type="number"] {
         color: #0971fe;
         text-decoration: underline;
         margin-bottom: 20px;
+        text-align: center;
 
         &:hover {
             text-decoration: none;
