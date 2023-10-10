@@ -30,5 +30,8 @@
     "jquery": "^3.7.0",
     "normalize.css": "^8.0.1",
     "sass": "^1.63.6"
+  },
+  "dependencies": {
+    "swiper": "^10.3.1"
   }
 }

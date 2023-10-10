@@ -280,13 +280,9 @@
 
     &__item {
         padding: 0 20px;
+        transition: .4s;
 
-
-        &-link {
-            transition: .4s;
-        }
-
-        &-link:hover {
+        &:hover {
             color: #0971fe;
             transition: .4s;
         }
@@ -376,8 +372,8 @@
     //background: image-set(
     //        url("../img/main-header-bg.avif") type("image/avif"),
     //        url("../img/main-header-bg.jpg") type("image/jpeg")) no-repeat center;
-    padding-top: 150px;
-    padding-bottom: 150px;
+    padding-top: 120px;
+    padding-bottom: 110px;
 
     &__inner {
         display: flex;
@@ -402,10 +398,48 @@
     &__title {
         font-size: 7rem;
         font-weight: 700;
-        line-height: 71.5px;
+        line-height: 53px;
         text-transform: uppercase;
         margin: 0 0 15px;
-        letter-spacing: 3px;
+        letter-spacing: 10px;
+        animation: 5s neon2 alternate infinite 14s;
+
+
+        span:nth-child(1) {
+            animation: 4s neon2 alternate-reverse 1s;
+        }
+
+        span:nth-child(2) {
+            animation: 4s neon2 alternate-reverse 2s;
+        }
+
+        span:nth-child(3) {
+            animation: 4s neon2 alternate-reverse 3s;
+        }
+
+        span:nth-child(4) {
+            animation: 4s neon2 alternate-reverse 4s;
+        }
+
+        span:nth-child(5) {
+            animation: 4s neon2 alternate-reverse 5s;
+        }
+
+        span:nth-child(6) {
+            animation: 4s neon2 alternate-reverse 6s;
+        }
+
+        span:nth-child(7) {
+            animation: 4s neon2 alternate-reverse 7s;
+        }
+
+        span:nth-child(8) {
+            animation: 4s neon2 alternate-reverse 8s;
+        }
+
+        span:nth-child(9) {
+            animation: 4s neon2 alternate-reverse 9s;
+        }
     }
 
     &__text {
@@ -465,7 +499,6 @@
         font-weight: 700;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
-
     }
 
     &__statistic-btn {
@@ -491,6 +524,54 @@
         background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
         box-shadow: 8px 13px 15px rgba(0, 0, 0, .3);
         border-radius: 20px;
+    }
+
+    &__crypto {
+        position: absolute;
+        bottom: -156px;
+        width: 100%;
+        overflow-y: visible;
+    }
+
+    &__crypto-inner {
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(1, 18, 111, 0.15);
+        width: 300px;
+        margin-left: 30px;
+    }
+
+    &__crypto-content {
+        margin-left: 15px;
+    }
+
+    &__crypto-text1 {
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    &__crypto-text2 {
+        margin-top: 10px;
+        font-size: 1.6rem;
+    }
+
+    &__crypto-name {
+        color: #8EA5C8;
+        font-size: 16px;
+    }
+
+    &__crypto-color {
+        margin-left: 5px;
+        font-weight: 500;
+        color: rgb(5, 174, 29);
+
+    }
+
+    &__crypto-img {
+        width: 50px;
     }
 }
 
@@ -580,6 +661,10 @@
     transition: 0.5s;
 }
 
+.top__statistic-linkBtn:before {
+    bottom: 1px;
+}
+
 .top__statistic-linkBtn:hover:before, .menu__item-btn:hover:before {
     bottom: 0;
     height: 50%;
@@ -658,9 +743,6 @@
         margin-bottom: 30px;
     }
 
-    &__list-item {
-    }
-
     &__sublist-item {
         list-style: inside;
         margin-left: 20px;
@@ -684,15 +766,14 @@
 
 //START
 .start {
-    background: url("../img/bg2.jpg") no-repeat center / cover;
+    background: url("../img/bg2.jpg") no-repeat center / cover fixed;
     text-align: center;
-
 
     &__title {
         font-size: 4rem;
         line-height: 28px;
         font-weight: 500;
-        padding-top: 100px;
+        padding-top: 200px;
         margin-bottom: 20px;
         letter-spacing: 1px;
     }
@@ -707,10 +788,49 @@
         display: flex;
         justify-content: space-between;
         padding-bottom: 150px;
+
+        &:hover .start__item:after {
+            opacity: 1;
+        }
+
+        .start__item:hover:before {
+            opacity: 1;
+        }
     }
 
     &__item {
         width: 360px;
+        padding: 20px;
+        align-items: center;
+        background-color: #4f93ce;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+
+        &:before,
+        &:after {
+            border-radius: inherit;
+            content: "";
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 500ms;
+        }
+
+        &:before {
+            background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(191, 226, 255, 0.24), transparent 40%);
+            z-index: 3;
+        }
+
+        &:after {
+            background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), rgba(191, 226, 255, 0.47), transparent 40%);
+            z-index: 1;
+        }
     }
 
     &__item-img {
@@ -721,14 +841,17 @@
     &__item-title {
         font-size: 1.9rem;
         line-height: 28px;
-        font-weight: 500;
         margin-top: 20px;
         margin-bottom: 20px;
         letter-spacing: 1px;
+        font-family: 'Roboto', sans-serif;
+        padding: 10px 0;
+        color: #BFE2FF;
+        font-weight: 700;
     }
 
     &__item-text {
-        color: #484848;
+        color: #ffffff;
         letter-spacing: 0.7px;
     }
 }
@@ -946,7 +1069,7 @@ input[type="number"] {
 
 //SUPPORT
 .support {
-    background: url("../img/bg2.jpg") no-repeat center / cover;
+    background: url("../img/bg2.jpg") no-repeat center / cover fixed;
     padding: 70px 0;
     font-weight: 500;
     color: black;
@@ -2767,5 +2890,15 @@ input[type="number"] {
     100% {
         transform: translate(0);
         rotate: 10deg;
+    }
+}
+
+@keyframes neon2 {
+    from {
+        text-shadow: 0 0 5px #FFF
+    }
+    to {
+        text-shadow: 0 0 20px #6fbeff,
+        0 0 10px #1a91ff
     }
 }

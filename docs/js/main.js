@@ -1,8 +1,42 @@
-// CALCULATOR
-const multiplier = 0.0000121832359;
-const multiplierDay = 86400;
+// CARDS
+let cards = document.querySelectorAll(".start__item");
 
+if (cards) {
+    cards.forEach((item) => {
+        item.addEventListener("mousemove", (e) => {
+            for (const card of cards) {
+                const rect = card.getBoundingClientRect(),
+                    x = e.clientX - rect.left,
+                    y = e.clientY - rect.top;
+                card.style.setProperty("--mouse-x", `${x}px`);
+                card.style.setProperty("--mouse-y", `${y}px`);
+            }
+        });
+    });
+}
+
+
+// SWIPER
+const topCrypto = document.querySelector('.top__crypto');
+
+if (topCrypto) {
+    let swiper = new Swiper(topCrypto, {
+        slidesPerView: 3,
+        freeMode: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 5500,
+            disableOnInteraction: false,
+        },
+    });
+}
+
+
+// CALCULATOR
 if (document.querySelector('.calculator')) {
+    const multiplier = 0.0000121832359;
+    const multiplierDay = 86400;
+
     const calcOutput = document.getElementById("calc-value");
     const calcInput = document.getElementById("calc-input");
     const speedUp = document.getElementById("sp-up");
@@ -109,7 +143,6 @@ if (menu) {
 
 // ACCORDEON/////////////////////////////////
 if (document.querySelector('.questions')) {
-
     const accordeon = document.querySelector('.questions__items');
     const accordeonTitles = accordeon.querySelectorAll('.questions__header');
 
@@ -134,6 +167,7 @@ const payoutStatus = document.querySelectorAll('.payout-status');
 const depositStatus = document.querySelectorAll('.deposit-status');
 const historyStatus = document.querySelectorAll('.history-status');
 const supportsStatus = document.querySelectorAll('.supports-status');
+const cryptoColor = document.querySelectorAll('.top__crypto-color');
 
 if (depositStatus) {
     depositStatus.forEach((item) => {
@@ -172,14 +206,22 @@ if (supportsStatus) {
     });
 }
 
+if (cryptoColor) {
+    cryptoColor.forEach((item) => {
+        if (item.innerText[0] === '-') {
+            item.classList.add('supports-status--red');
+        }
+    });
+}
+
 
 // COPY/////////////////////////////////
 const cryptoWallet = document.querySelector('.crypto__content-wallet');
-const cryptoBtn = document.querySelector('.crypto__content-btn');
 const referralsInput = document.querySelector('.referrals__form-input');
-const referralsBtn = document.querySelector('.referrals__form-btn');
 
 if (cryptoWallet) {
+    const cryptoBtn = document.querySelector('.crypto__content-btn');
+
     cryptoBtn.addEventListener("click", () => {
         navigator.clipboard.writeText(cryptoWallet.innerText);
         cryptoBtn.innerText = 'Кошелек скопирован'
@@ -187,6 +229,8 @@ if (cryptoWallet) {
 }
 
 if (referralsInput) {
+    const referralsBtn = document.querySelector('.referrals__form-btn');
+
     referralsBtn.addEventListener("click", () => {
         navigator.clipboard.writeText(referralsInput.value);
         referralsBtn.innerText = 'Ссылка скопирована'
