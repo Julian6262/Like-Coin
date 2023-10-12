@@ -43,11 +43,12 @@
     &__text {
         position: relative;
         margin: 0 0 3px 19px;
+        letter-spacing: .7px;
 
         &::before {
             content: url("../img/sprite.svg#user-online");
             position: absolute;
-            bottom: 0;
+            bottom: -3px;
             left: -23px;
             width: 21px;
             height: 21px;
@@ -57,6 +58,85 @@
     &:hover {
         left: -46px;
         transition: left .5s;
+    }
+}
+
+
+// GLOBE
+.globe {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform: scale(1.1);
+}
+
+.globe__worldMap,
+.globe__worldMap-front,
+.globe__worldMap-back,
+.globe__sphere,
+.globe__outer-shadow,
+.globe__inner-shadow {
+    position: absolute;
+}
+
+.globe__sphere,
+.globe__outer-shadow,
+.globe__inner-shadow {
+    width: 200px;
+    height: 200px;
+}
+
+.globe__worldMap {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.globe__worldMap-front,
+.globe__worldMap-back {
+    width: 1000px;
+    height: 200px;
+    overflow: visible;
+    background: url(../img/worldmap.svg) no-repeat;
+}
+
+.globe__outer-shadow {
+    top: 186px;
+    width: 200px;
+    height: 30px;
+    background-image: url(../img/outer_shadow.svg);
+}
+
+.globe__inner-shadow {
+    background-image: url(../img/inner_shadow.svg);
+}
+
+.globe__worldMap-front {
+    background-position: 0 0;
+    animation: textureSpinReverse 15s linear infinite;
+}
+
+.globe__worldMap-back {
+    background-position: 0 -220px;
+    animation: textureSpin 15s linear infinite;
+}
+
+@keyframes textureSpin {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-47.5%);
+    }
+}
+
+@keyframes textureSpinReverse {
+    from {
+        transform: translateX(-47.5%);
+    }
+    to {
+        transform: translateX(0);
     }
 }
 
@@ -105,7 +185,7 @@
     }
 
     &--captcha {
-        width: 200px;
+        width: 220px;
     }
 
     &__captcha {
@@ -120,8 +200,6 @@
         padding: 15px 40px;
         box-shadow: 7px 12px 12px 4px rgba(0, 0, 0, .09);
         background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
-        width: 240px;
-        height: 50px;
         margin: 0 auto;
         color: white;
         font-weight: 500;
@@ -174,12 +252,12 @@
 
     &__link {
         display: flex;
-        gap: 7px;
         align-items: center;
         margin-bottom: 18px;
+        gap: 7px;
         color: black;
+        font-weight: 500;
         cursor: pointer;
-        letter-spacing: .8px;
         transition: .3s;
 
         &:hover {
@@ -261,11 +339,44 @@
         justify-content: space-between;
     }
 
-
     &__logo {
         padding-left: 38px;
     }
+
+    &__logo-text {
+        font-size: 30px;
+        font-family: 'LuckiestGuy', Arial, sans-serif;
+        line-height: 26px;
+        letter-spacing: 6px;
+        transform: rotate(-15deg);
+        position: relative;
+        user-select: none;
+
+        &--blue {
+            color: #b0c4ff;
+            text-shadow: 2px 2px 1px rgb(0, 0, 0),
+            0 0 5px #C20000,
+            0 0 20px rgb(255, 255, 255);
+        }
+
+        &--purple {
+            color: #C20000;
+            text-shadow: 2px 2px 1px rgb(0, 0, 0),
+            0 0 5px #b0c4ff,
+            0 0 20px rgb(255, 255, 255);
+        }
+    }
+
+    &__logo-img {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: -2px;
+        left: 16px;
+        animation: heart 3s ease 0s infinite alternate;
+    }
 }
+
 
 .menu {
     &__items {
@@ -402,43 +513,41 @@
         text-transform: uppercase;
         margin: 0 0 15px;
         letter-spacing: 10px;
-        animation: 5s neon2 alternate infinite 14s;
-
 
         span:nth-child(1) {
-            animation: 4s neon2 alternate-reverse 1s;
+            animation: neon 4s alternate-reverse 1s, 10s neon2 alternate-reverse 1s infinite;
         }
 
         span:nth-child(2) {
-            animation: 4s neon2 alternate-reverse 2s;
+            animation: neon 4s alternate-reverse 2s, 10s neon2 alternate-reverse 2s infinite;
         }
 
         span:nth-child(3) {
-            animation: 4s neon2 alternate-reverse 3s;
+            animation: neon 4s alternate-reverse 3s, 10s neon2 alternate-reverse 3s infinite;
         }
 
         span:nth-child(4) {
-            animation: 4s neon2 alternate-reverse 4s;
+            animation: neon 4s alternate-reverse 4s, 10s neon2 alternate-reverse 4s infinite;
         }
 
         span:nth-child(5) {
-            animation: 4s neon2 alternate-reverse 5s;
+            animation: neon 4s alternate-reverse 5s, 10s neon2 alternate-reverse 5s infinite;
         }
 
         span:nth-child(6) {
-            animation: 4s neon2 alternate-reverse 6s;
+            animation: neon 4s alternate-reverse 6s, 10s neon2 alternate-reverse 6s infinite;
         }
 
         span:nth-child(7) {
-            animation: 4s neon2 alternate-reverse 7s;
+            animation: neon 4s alternate-reverse 7s, 10s neon2 alternate-reverse 7s infinite;
         }
 
         span:nth-child(8) {
-            animation: 4s neon2 alternate-reverse 8s;
+            animation: neon 4s alternate-reverse 8s, 10s neon2 alternate-reverse 8s infinite;
         }
 
         span:nth-child(9) {
-            animation: 4s neon2 alternate-reverse 9s;
+            animation: neon 4s alternate-reverse 9s, 10s neon2 alternate-reverse 9s infinite;
         }
     }
 
@@ -464,7 +573,7 @@
         color: white;
         text-transform: uppercase;
         background: #0971fe;
-        font-weight: 500;
+        font-weight: 700;
         margin: 20px -30px 30px -30px;
         padding: 20px 45px;
         letter-spacing: 1.5px;
@@ -485,6 +594,7 @@
 
     &__statistic-info {
         color: #0971fe;
+        font-weight: 700;
     }
 
     &__statistic-rname {
@@ -516,7 +626,7 @@
         margin-bottom: 15px;
 
         &:first-child {
-            width: 270px;
+            width: 280px;
         }
     }
 
@@ -778,6 +888,11 @@
         letter-spacing: 1px;
     }
 
+    &__spanTitle {
+        font-weight: 700;
+        color: #0971fe;
+    }
+
     &__text {
         color: #484848;
         margin-bottom: 100px;
@@ -844,7 +959,6 @@
         margin-top: 20px;
         margin-bottom: 20px;
         letter-spacing: 1px;
-        font-family: 'Roboto', sans-serif;
         padding: 10px 0;
         color: #BFE2FF;
         font-weight: 700;
@@ -1070,34 +1184,10 @@ input[type="number"] {
 //SUPPORT
 .support {
     background: url("../img/bg2.jpg") no-repeat center / cover fixed;
-    padding: 70px 0;
-    font-weight: 500;
-    color: black;
+    padding: 90px 0;
     display: flex;
     align-items: center;
     flex: 1;
-
-    &__bottom {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-    }
-
-    &__bottom-text1 {
-        font-size: 1.8rem;
-    }
-
-    &__bottom-text2 {
-        font-size: 4rem;
-        letter-spacing: 1px;
-        line-height: 50px;
-    }
-
-    &__img {
-        margin-top: 50px;
-        margin-bottom: 70px;
-    }
 
     &__text {
         color: #0971fe;
@@ -1105,22 +1195,7 @@ input[type="number"] {
         font-weight: 700;
         text-align: center;
         line-height: 40px;
-    }
-
-    &__bottom-btn {
-        padding: 18px 65px;
-        border-radius: 10px;
-        letter-spacing: .6px;
-        color: white;
-        font-size: 1.5rem;
-        text-transform: uppercase;
-        font-weight: 700;
-        background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
-
-        &:hover {
-            color: white;
-            background-image: linear-gradient(to bottom, #02A3FE 0%, #0971fe 100%);
-        }
+        margin-bottom: 50px;
     }
 }
 
@@ -1238,7 +1313,7 @@ input[type="number"] {
 
     &__content--mini {
         font-size: 1rem;
-        line-height: 13px;
+        line-height: 16px;
         margin: 30px auto 0;
         width: 350px;
     }
@@ -1292,7 +1367,6 @@ input[type="number"] {
     &__header {
         font-size: 1.6rem;
         font-weight: 500;
-        color: #424242;
         padding-left: 15px;
         padding-right: 50px;
         background-color: #fafafa;
@@ -1980,6 +2054,7 @@ input[type="number"] {
 
     &__table-tr {
         text-align: center;
+        font-weight: 500;
     }
 
     &__table-td {
@@ -2012,7 +2087,7 @@ input[type="number"] {
 
     &__right {
         background-image: linear-gradient(to top, #02A3FE 0%, #0971fe 100%);
-        width: 290px;
+        width: 300px;
         color: white;
         padding: 20px 15px;
         border-radius: 25px;
@@ -2060,7 +2135,7 @@ input[type="number"] {
 
     &__form-inputWrapper {
         background-image: linear-gradient(to top, #f4bd0e 0%, #c5980f 100%);
-        width: 364px;
+        width: 320px;
         height: 55px;
         border-radius: 10px;
         margin-left: 18px;
@@ -2075,11 +2150,11 @@ input[type="number"] {
         color: #f4bd0e;
         font-weight: 700;
         line-height: 49px;
-        width: 358px;
+        width: 315px;
         height: 49px;
         border: none;
         text-align: center;
-        padding: 0 160px 0 20px;
+        padding: 0 160px 0 40px;
         border-radius: 10px;
         outline: none;
     }
@@ -2492,12 +2567,6 @@ input[type="number"] {
         margin-bottom: 25px;
     }
 
-    &__text1 {
-        font-weight: 700;
-        letter-spacing: 1px;
-        margin-bottom: 25px;
-    }
-
     &__text2 {
         color: #8f8f8f;
         letter-spacing: 1px;
@@ -2606,22 +2675,22 @@ input[type="number"] {
     }
 
     &__table-header {
-        letter-spacing: .7px;
         border-bottom: 1px solid #d1d1d1;
     }
 
     &__table-td {
         padding: 8px 8px;
         border-bottom: 1px solid #d1d1d1;
+        font-weight: 500;
         word-wrap: break-word;
         text-align: center;
-        font-weight: 400;
         line-height: 25px;
     }
 
     &__table-link {
         transition: .3s;
         line-height: 50px;
+        font-weight: 500;
         color: #0971fe;
 
         &:hover {
@@ -2731,6 +2800,7 @@ input[type="number"] {
         flex-direction: column;
         text-align: center;
         letter-spacing: 1px;
+        font-weight: 700;
         width: 70%;
     }
 
@@ -2893,12 +2963,38 @@ input[type="number"] {
     }
 }
 
-@keyframes neon2 {
+@keyframes neon {
     from {
-        text-shadow: 0 0 5px #FFF
+        text-shadow: 0 0 0 #FFF
     }
     to {
-        text-shadow: 0 0 20px #6fbeff,
-        0 0 10px #1a91ff
+        text-shadow: 0 0 5px #bce1ff,
+        0 0 10px #83c6ff,
+        0 0 15px #54b0fd,
+        0 0 20px #0f8bff
+    }
+}
+
+@keyframes neon2 {
+    0% {
+    }
+    80% {
+        text-shadow: 0 0 0 #FFF
+    }
+    100% {
+        text-shadow: 0 0 5px #bce1ff,
+        0 0 10px #83c6ff,
+        0 0 15px #54b0fd,
+        0 0 20px #0f8bff
+    }
+}
+
+@keyframes heart {
+    0% {
+        transform: rotate(-20deg);
+    }
+
+    100% {
+        transform: rotate(5deg);
     }
 }
