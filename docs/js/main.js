@@ -1,4 +1,79 @@
-// CARDS
+// SCROLL-PAGE/////////////////////////////////
+let calculatorTitle = document.querySelector(".calculator__title");
+
+if (calculatorTitle) {
+    let startTitle = document.querySelector(".start__title");
+    let startText = document.querySelector(".start__text");
+    let startItems = document.querySelectorAll(".start__item");
+    let supportText = document.querySelector(".support__text");
+
+    let calculatorCheck = false;
+    let startCheck = false;
+    let startTextCheck = false;
+    let startItemCheck = false;
+    let supportTextCheck = false;
+
+    function scrollFunc() {
+        let windowPos = window.innerHeight + window.scrollY;
+        let calculatorTitlePos = windowPos - calculatorTitle.offsetTop;
+        let startTitlePos = windowPos - startTitle.offsetTop;
+        let startTextPos = windowPos - startText.offsetTop;
+        let startItemPos = windowPos - startItems[0].offsetTop;
+        let supportTextPos = windowPos - supportText.offsetTop;
+
+        if (calculatorTitlePos >= 0 && calculatorCheck === false) {
+            calculatorCheck = true;
+            calculatorTitle.classList.add('calculator__title--fade');
+        } else if (calculatorTitlePos < 0 && calculatorCheck === true) {
+            calculatorCheck = false;
+            calculatorTitle.classList.remove('calculator__title--fade');
+        }
+
+        if (startTitlePos >= 0 && startCheck === false) {
+            startCheck = true;
+            startTitle.classList.add('start__title--fade');
+        } else if (startTitlePos < 0 && startCheck === true) {
+            startCheck = false;
+            startTitle.classList.remove('start__title--fade');
+        }
+
+        if (startTextPos >= 0 && startTextCheck === false) {
+            startTextCheck = true;
+            startText.classList.add('start__text--fade');
+        } else if (startTextPos < 0 && startTextCheck === true) {
+            startTextCheck = false;
+            startText.classList.remove('start__text--fade');
+        }
+
+        if (supportTextPos >= 0 && supportTextCheck === false) {
+            supportTextCheck = true;
+            supportText.classList.add('support__text--fade');
+        } else if (supportTextPos < 0 && supportTextCheck === true) {
+            supportTextCheck = false;
+            supportText.classList.remove('support__text--fade');
+        }
+
+        if (startItemPos >= 0 && startItemCheck === false) {
+            startItemCheck = true;
+            startItems.forEach((item) => {
+                item.classList.add('start__item--fade');
+            });
+        } else if (startItemPos < 0 && startItemCheck === true) {
+            startItemCheck = false;
+            startItems.forEach((item) => {
+                item.classList.remove('start__item--fade');
+            });
+        }
+    }
+
+    scrollFunc();
+
+    window.addEventListener('resize', scrollFunc);
+    window.addEventListener('scroll', scrollFunc);
+}
+
+
+// CARDS/////////////////////////////////
 let cards = document.querySelectorAll(".start__item");
 
 if (cards) {
@@ -16,7 +91,7 @@ if (cards) {
 }
 
 
-// SWIPER
+// SWIPER/////////////////////////////////
 const topCrypto = document.querySelector('.top__crypto');
 
 if (topCrypto) {
@@ -32,7 +107,7 @@ if (topCrypto) {
 }
 
 
-// CALCULATOR
+// CALCULATOR/////////////////////////////////
 if (document.querySelector('.calculator')) {
     const multiplier = 0.0000121832359;
     const multiplierDay = 86400;
@@ -77,7 +152,7 @@ if (document.querySelector('.calculator')) {
 }
 
 
-// SPEEDUP-COUNT
+// SPEEDUP-COUNT/////////////////////////////////
 if (document.querySelector('.speedup')) {
     const speedupInput = document.getElementById("speedupInput");
     const speedupOutput = document.getElementById("speedupOutput");
@@ -121,19 +196,16 @@ document.addEventListener('keyup', (e) => {
 });
 
 
-// SCROLL/////////////////////////////////////////////
+// SCROLL-MENU/////////////////////////////////////////////
 const menu = document.querySelectorAll(".menu__item--scroll");
 
 if (menu) {
     menu.forEach((item) => {
-
         item.addEventListener("click", (e) => {
-
             e.preventDefault();
             let elem = document.getElementById(e.target.getAttribute('href').slice(1));
-
-            document.body.scrollBy({
-                top: elem.getBoundingClientRect().top - 50,
+            window.scrollBy({
+                top: elem.getBoundingClientRect().top - 150,
                 behavior: 'smooth'
             });
         });

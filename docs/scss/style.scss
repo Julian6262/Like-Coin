@@ -36,7 +36,7 @@
     position: fixed;
     left: -50px;
     top: 40%;
-    transition: left .5s;
+    transition: left .4s;
     z-index: 100;
     box-shadow: -5px 8px 12px 4px rgba(0, 0, 0, .09);
 
@@ -48,16 +48,16 @@
         &::before {
             content: url("../img/sprite.svg#user-online");
             position: absolute;
-            bottom: -3px;
-            left: -23px;
-            width: 21px;
-            height: 21px;
+            bottom: 3px;
+            left: -25px;
+            width: 28px;
+            height: 19px;
         }
     }
 
     &:hover {
         left: -46px;
-        transition: left .5s;
+        transition: left .4s;
     }
 }
 
@@ -507,7 +507,7 @@
     }
 
     &__title {
-        font-size: 7rem;
+        font-size: 8rem;
         font-weight: 700;
         line-height: 53px;
         text-transform: uppercase;
@@ -515,47 +515,48 @@
         letter-spacing: 10px;
 
         span:nth-child(1) {
-            animation: neon 4s alternate-reverse 1s, 10s neon2 alternate-reverse 1s infinite;
+            animation: neon 4s alternate-reverse 1s, 15s neon2 alternate-reverse 1s infinite;
         }
 
         span:nth-child(2) {
-            animation: neon 4s alternate-reverse 2s, 10s neon2 alternate-reverse 2s infinite;
+            animation: neon 4s alternate-reverse 2s, 15s neon2 alternate-reverse 2s infinite;
         }
 
         span:nth-child(3) {
-            animation: neon 4s alternate-reverse 3s, 10s neon2 alternate-reverse 3s infinite;
+            animation: neon 4s alternate-reverse 3s, 15s neon2 alternate-reverse 3s infinite;
         }
 
         span:nth-child(4) {
-            animation: neon 4s alternate-reverse 4s, 10s neon2 alternate-reverse 4s infinite;
+            animation: neon 4s alternate-reverse 4s, 15s neon2 alternate-reverse 4s infinite;
         }
 
         span:nth-child(5) {
-            animation: neon 4s alternate-reverse 5s, 10s neon2 alternate-reverse 5s infinite;
+            animation: neon 4s alternate-reverse 5s, 15s neon2 alternate-reverse 5s infinite;
         }
 
         span:nth-child(6) {
-            animation: neon 4s alternate-reverse 6s, 10s neon2 alternate-reverse 6s infinite;
+            animation: neon 4s alternate-reverse 6s, 15s neon2 alternate-reverse 6s infinite;
         }
 
         span:nth-child(7) {
-            animation: neon 4s alternate-reverse 7s, 10s neon2 alternate-reverse 7s infinite;
+            animation: neon 4s alternate-reverse 7s, 15s neon2 alternate-reverse 7s infinite;
         }
 
         span:nth-child(8) {
-            animation: neon 4s alternate-reverse 8s, 10s neon2 alternate-reverse 8s infinite;
+            animation: neon 4s alternate-reverse 8s, 15s neon2 alternate-reverse 8s infinite;
         }
 
         span:nth-child(9) {
-            animation: neon 4s alternate-reverse 9s, 10s neon2 alternate-reverse 9s infinite;
+            animation: neon 4s alternate-reverse 9s, 15s neon2 alternate-reverse 9s infinite;
         }
     }
 
     &__text {
-        font-size: 3.6rem;
+        font-size: 3rem;
         line-height: 47px;
         font-weight: 400;
         letter-spacing: 1.5px;
+        margin-top: 50px;
     }
 
     &__statistic {
@@ -566,17 +567,71 @@
         padding: 30px;
         color: black;
         text-align: center;
+        position: relative;
     }
 
-    &__statistic-title {
+    &__statistic-header {
         font-size: 2.3rem;
         color: white;
-        text-transform: uppercase;
         background: #0971fe;
         font-weight: 700;
         margin: 20px -30px 30px -30px;
         padding: 20px 45px;
         letter-spacing: 1.5px;
+        position: relative;
+    }
+
+    &__statistic-title {
+        text-shadow: 2px 2px 1px rgb(0, 0, 0),
+        0 0 5px #b0c4ff
+    }
+
+    &__statistic-droplet {
+        --bubble-radius: 22px;
+        --bubble-shadow: calc((var(--bubble-radius) / 25) * -1) calc(var(--bubble-radius) / 18) 8px 0 rgba(0, 0, 0, 0.6);
+        width: var(--bubble-radius);
+        height: calc(var(--bubble-radius) - 0.8rem);
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        box-shadow: var(--bubble-shadow), inset calc(var(--bubble-radius) / 5 * -1) calc(var(--bubble-radius) / 5) calc(var(--bubble-radius) / 4) 0 rgb(15 20 30 / 60%);
+        position: absolute;
+
+        &:nth-child(2) {
+            left: 10px;
+        }
+
+        &:nth-child(3) {
+            right: 10px;
+        }
+    }
+
+    &__statistic-droplet:after {
+        position: absolute;
+        content: " ";
+        background: #fff;
+        width: 15%;
+        height: 15%;
+        border-radius: 50%;
+        transform: skew(11deg, 2deg);
+        top: 20%;
+        left: 63%;
+        z-index: 10;
+        opacity: 0.9;
+    }
+
+    &__statistic-droplet:before {
+        position: absolute;
+        content: " ";
+        background-color: #fff;
+        width: 9%;
+        height: 9%;
+        border-radius: 50%;
+        transform: skew(10deg, 0deg);
+        top: 40%;
+        left: 75%;
+        z-index: 20;
+        opacity: 0.4;
     }
 
     &__statistic-items {
@@ -588,6 +643,7 @@
         margin-bottom: 5px;
         line-height: 24px;
         display: flex;
+        flex-direction: column;
         font-weight: 500;
         justify-content: space-between;
     }
@@ -597,16 +653,18 @@
         font-weight: 700;
     }
 
-    &__statistic-rname {
+    &__statistic-rName {
         font-size: 2rem;
         font-weight: 500;
         letter-spacing: 0.5px;
         margin-bottom: 20px;
     }
 
-    &__statistic-summ {
+    &__statistic-sum {
         font-size: 2.7rem;
         font-weight: 700;
+        display: flex;
+        flex-direction: column;
         letter-spacing: 0.5px;
         margin-bottom: 40px;
     }
@@ -883,9 +941,17 @@
         font-size: 4rem;
         line-height: 28px;
         font-weight: 500;
-        padding-top: 200px;
+        margin-top: 200px;
         margin-bottom: 20px;
         letter-spacing: 1px;
+        transform: translateY(100px);
+        opacity: 0;
+
+        &--fade {
+            transform: translateY(0);
+            opacity: 1;
+            transition: .8s;
+        }
     }
 
     &__spanTitle {
@@ -897,6 +963,14 @@
         color: #484848;
         margin-bottom: 100px;
         letter-spacing: 0.7px;
+        opacity: 0;
+        transform: translateX(100%);
+
+        &--fade {
+            opacity: 1;
+            transform: translateX(0);
+            transition: .8s;
+        }
     }
 
     &__items {
@@ -923,6 +997,15 @@
         flex-direction: column;
         position: relative;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 16px 20px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transform: scaleY(0%);
+        transform-origin: top;
+
+        &--fade {
+            opacity: 1;
+            transform: scaleY(100%);
+            transition: .8s;
+        }
 
         &:before,
         &:after {
@@ -975,15 +1058,25 @@
 .calculator {
     background: url("../img/bg-b.jpg") no-repeat center / cover;
     text-align: center;
+    //padding-top: 80px;
 
     &__title {
         font-size: 4rem;
         line-height: 28px;
         font-weight: 500;
-        padding-top: 80px;
+        margin-top: 80px;
         margin-bottom: 60px;
         letter-spacing: 1px;
         color: white;
+        transform: translateY(100px);
+        opacity: 0;
+        transition: .8s ease;
+
+        &--fade {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
     }
 
     &__line {
@@ -1196,6 +1289,15 @@ input[type="number"] {
         text-align: center;
         line-height: 40px;
         margin-bottom: 50px;
+        opacity: 0;
+        transform: translateX(-100%);
+        transform-origin: top;
+
+        &--fade {
+            opacity: 1;
+            transform: translateX(0);
+            transition: .8s;
+        }
     }
 }
 
@@ -1315,7 +1417,7 @@ input[type="number"] {
         font-size: 1rem;
         line-height: 16px;
         margin: 30px auto 0;
-        width: 350px;
+        width: 360px;
     }
 
     &__content-btn {
