@@ -1,25 +1,34 @@
-// SCROLL-PAGE/////////////////////////////////
-let calculatorTitle = document.querySelector(".calculator__title");
+let calculatorTitle = document.querySelector(".calculator__title");  // 1st page selector
+let speedupInput = document.getElementById("speedupInput");     // speedup page selector
+let accordeon = document.querySelector('.questions__items');         // questions page selector
+let table = document.querySelector(".referrals__table-contentSort"); // sorting page selector
 
+const MULTIPLIER = 0.01;
+
+
+// SCROLL-PAGE/////////////////////////////////
 if (calculatorTitle) {
     let startTitle = document.querySelector(".start__title");
     let startText = document.querySelector(".start__text");
     let startItems = document.querySelectorAll(".start__item");
     let supportText = document.querySelector(".support__text");
+    let formInput = document.querySelector(".formInput");
 
     let calculatorCheck = false;
     let startCheck = false;
     let startTextCheck = false;
     let startItemCheck = false;
     let supportTextCheck = false;
+    let formInputCheck = false;
 
-    function scrollFunc() {
+    function scroll() {
         let windowPos = window.innerHeight + window.scrollY;
         let calculatorTitlePos = windowPos - calculatorTitle.offsetTop;
         let startTitlePos = windowPos - startTitle.offsetTop;
         let startTextPos = windowPos - startText.offsetTop;
         let startItemPos = windowPos - startItems[0].offsetTop;
         let supportTextPos = windowPos - supportText.offsetTop;
+        let formInputPos = windowPos - formInput.offsetTop;
 
         if (calculatorTitlePos >= 0 && calculatorCheck === false) {
             calculatorCheck = true;
@@ -64,23 +73,31 @@ if (calculatorTitle) {
                 item.classList.remove('start__item--fade');
             });
         }
+
+        if (formInputPos >= 0 && formInputCheck === false) {
+            formInputCheck = true;
+            formInput.classList.add('formInput--fade');
+        } else if (formInputPos < 0 && formInputCheck === true) {
+            formInputCheck = false;
+            formInput.classList.remove('formInput--fade');
+        }
     }
 
-    scrollFunc();
+    scroll();
 
-    window.addEventListener('resize', scrollFunc);
-    window.addEventListener('scroll', scrollFunc);
+    window.addEventListener('resize', scroll);
+    window.addEventListener('scroll', scroll);
 }
 
 
 // CARDS/////////////////////////////////
-let cards = document.querySelectorAll(".start__item");
+if (calculatorTitle) {
+    let cards = document.querySelectorAll(".start__item");
 
-if (cards) {
     cards.forEach((item) => {
         item.addEventListener("mousemove", (e) => {
-            for (const card of cards) {
-                const rect = card.getBoundingClientRect(),
+            for (let card of cards) {
+                let rect = card.getBoundingClientRect(),
                     x = e.clientX - rect.left,
                     y = e.clientY - rect.top;
                 card.style.setProperty("--mouse-x", `${x}px`);
@@ -92,10 +109,10 @@ if (cards) {
 
 
 // SWIPER/////////////////////////////////
-const topCrypto = document.querySelector('.top__crypto');
+if (calculatorTitle) {
+    let topCrypto = document.querySelector('.top__crypto');
 
-if (topCrypto) {
-    let swiper = new Swiper(topCrypto, {
+    new Swiper(topCrypto, {
         slidesPerView: 3,
         freeMode: true,
         grabCursor: true,
@@ -108,82 +125,119 @@ if (topCrypto) {
 
 
 // CALCULATOR/////////////////////////////////
-if (document.querySelector('.calculator')) {
-    const multiplier = 0.0000121832359;
-    const multiplierDay = 86400;
+if (calculatorTitle) {
+    let idTimeout;
+    let idTimeoutDown;
+    let idTimeoutUp;
 
-    const calcOutput = document.getElementById("calc-value");
-    const calcInput = document.getElementById("calc-input");
-    const speedUp = document.getElementById("sp-up");
-    const day = document.getElementById("day");
-    const month = document.getElementById("month");
-    const threeMonth = document.getElementById("threeMonth");
-    const sixMonth = document.getElementById("sixMonth");
+    let calcInput = document.querySelector(".formInput__input");
+    let calculatorSpeed = document.querySelector(".calculator__sum-output");
+    let inputMinus = document.querySelector(".formInput__minus");
+    let inputPlus = document.querySelector(".formInput__plus");
+    let hour = document.getElementById("hour");
+    let day = document.getElementById("day");
+    let month = document.getElementById("month");
+    let threeMonth = document.getElementById("threeMonth");
 
     function calculate() {
-        speedUp.value = (Math.round((calcInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
-        day.value = (speedUp.value * multiplierDay).toFixed(2);
-        month.value = (speedUp.value * multiplierDay * 30).toFixed(2);
-        threeMonth.value = (speedUp.value * multiplierDay * 30 * 3).toFixed(2);
-        sixMonth.value = (speedUp.value * multiplierDay * 30 * 6).toFixed(2);
+        calculatorSpeed.value = (0).toFixed(5);
+
+        if (calcInput.value > 5000) {
+            calcInput.value = 5000;
+        }
+
+        if (calcInput.value < 0 || calcInput.value === "") {
+            calcInput.value = 0;
+        }
+
+        hour.value = (calcInput.value * MULTIPLIER).toFixed(2);
+        day.value = (hour.value * 24).toFixed(2);
+        month.value = (day.value * 30).toFixed(2);
+        threeMonth.value = (month.value * 3).toFixed(2);
+
+        clearTimeout(idTimeout);
+
+        idTimeout = setInterval(() => {
+            calculatorSpeed.value = (+calculatorSpeed.value + 0.00001).toFixed(5);
+        }, 3600);
     }
 
-    calcOutput.value = calcInput.value;
-    calculate();
+    calcInput.addEventListener("keydown", (event) => {
+        if (isNaN(event.key) && event.key !== 'Backspace' && event.key !== 'ArrowUp'
+            && event.key !== 'ArrowDown' && event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') {
+            event.preventDefault();
+        }
+    });
 
-    calcInput.addEventListener("input", (event) => {
-        calcOutput.value = event.target.value;
+    calcInput.addEventListener("input", () => {
         calculate();
     });
 
-    calcOutput.addEventListener("input", (event) => {
+    inputMinus.addEventListener("mousedown", () => {
+        idTimeoutDown = setInterval(() => {
+            calcInput.value = +calcInput.value - 1
+            calculate();
+        }, 30);
+    });
 
-        if (event.target.value > 50000) {
-            event.target.value = 50000;
-        }
+    inputMinus.addEventListener("mouseup", () => {
+        clearTimeout(idTimeoutDown);
+    });
 
-        if (event.target.value < 1) {
-            event.target.value = 1;
-        }
 
-        calcInput.value = event.target.value;
-        calculate();
+
+    inputPlus.addEventListener("mousedown", () => {
+        idTimeoutUp = setInterval(() => {
+            calcInput.value = +calcInput.value + 1
+            calculate();
+        }, 30);
+    });
+
+    inputPlus.addEventListener("mouseup", () => {
+        clearTimeout(idTimeoutUp);
     });
 }
 
 
-// SPEEDUP-COUNT/////////////////////////////////
-if (document.querySelector('.speedup')) {
-    const speedupInput = document.getElementById("speedupInput");
-    const speedupOutput = document.getElementById("speedupOutput");
+// SPEEDUP-COUNT/////////////////////////////////  !!!!!!!!!!!!!!!!!!!  ДОДЕЛАТЬ  !!!!!!!!!!!!!!!!!!!!!!!!!
+if (speedupInput) {
+    let speedupOutput = document.getElementById("speedupOutput");
 
-    speedupOutput.value = (Math.round((speedupInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
+    speedupOutput.value = (Math.round((speedupInput.value * MULTIPLIER) * 10000000) / 10000000).toFixed(5);
 
     speedupInput.addEventListener("input", (event) => {
 
-        if (event.target.value > 50000) {
-            event.target.value = 50000;
+        if (event.target.value > 5000) {
+            event.target.value = 5000;
         }
 
-        if (event.target.value < 1) {
-            event.target.value = 1;
+        if (event.target.value < 0 || event.target.value === "") {
+            event.target.value = 0;
         }
 
-        if (event.target.value > 99 && event.target.value < 50001) {
-            speedupOutput.value = (Math.round((speedupInput.value * multiplier) * 10000000) / 10000000).toFixed(7);
+        if (event.target.value >= 0 && event.target.value < 5001) {
+            speedupOutput.value = (Math.round((speedupInput.value * MULTIPLIER) * 10000000) / 10000000).toFixed(5);
         }
     });
 }
 
 
 // MODAL////////////////////////////////////////////////
-const modal = document.querySelector('.modal');
+let footerRules = document.querySelector('.footer__rules');
+let modal = document.querySelector('.modal');
+let contentBtn = document.querySelector('.main__content-btn');
 
-document.addEventListener("click", (e) => {
-    if (e.target.classList.contains("footer__rules") || e.target.classList.contains("main__content-btn")) {
+footerRules.addEventListener("click", () => {
+    modal.classList.add('modal--active');
+});
+
+if (contentBtn) {
+    contentBtn.addEventListener("click", () => {
         modal.classList.add('modal--active');
-    }
+    });
+}
 
+modal.addEventListener("click", (e) => {
     if (e.target.classList.contains("modal") || e.target.classList.contains("modal__svg")) {
         modal.classList.remove('modal--active');
     }
@@ -197,9 +251,9 @@ document.addEventListener('keyup', (e) => {
 
 
 // SCROLL-MENU/////////////////////////////////////////////
-const menu = document.querySelectorAll(".menu__item--scroll");
+if (calculatorTitle) {
+    let menu = document.querySelectorAll(".menu__item--scroll");
 
-if (menu) {
     menu.forEach((item) => {
         item.addEventListener("click", (e) => {
             e.preventDefault();
@@ -214,13 +268,12 @@ if (menu) {
 
 
 // ACCORDEON/////////////////////////////////
-if (document.querySelector('.questions')) {
-    const accordeon = document.querySelector('.questions__items');
-    const accordeonTitles = accordeon.querySelectorAll('.questions__header');
+if (accordeon) {
+    let accordeonTitles = accordeon.querySelectorAll('.questions__header');
 
     accordeonTitles.forEach.call(accordeonTitles, function (accordeonTitle) {
         accordeonTitle.addEventListener('click', function () {
-            const currentText = accordeonTitle.parentElement.querySelector('.questions__text')
+            let currentText = accordeonTitle.parentElement.querySelector('.questions__text')
             accordeonTitle.classList.toggle('questions__header--active');
             currentText.classList.toggle('questions__text--visible');
 
@@ -235,11 +288,11 @@ if (document.querySelector('.questions')) {
 
 
 // TABLE-STATUS/////////////////////////////////
-const payoutStatus = document.querySelectorAll('.payout-status');
-const depositStatus = document.querySelectorAll('.deposit-status');
-const historyStatus = document.querySelectorAll('.history-status');
-const supportsStatus = document.querySelectorAll('.supports-status');
-const cryptoColor = document.querySelectorAll('.top__crypto-color');
+let payoutStatus = document.querySelectorAll('.payout-status');
+let depositStatus = document.querySelectorAll('.deposit-status');
+let historyStatus = document.querySelectorAll('.history-status');
+let supportsStatus = document.querySelectorAll('.supports-status');
+let cryptoColor = document.querySelectorAll('.top__crypto-color');
 
 if (depositStatus) {
     depositStatus.forEach((item) => {
@@ -288,11 +341,11 @@ if (cryptoColor) {
 
 
 // COPY/////////////////////////////////
-const cryptoWallet = document.querySelector('.crypto__content-wallet');
-const referralsInput = document.querySelector('.referrals__form-input');
+let cryptoWallet = document.querySelector('.crypto__content-wallet');
+let referralsInput = document.querySelector('.referrals__form-input');
 
 if (cryptoWallet) {
-    const cryptoBtn = document.querySelector('.crypto__content-btn');
+    let cryptoBtn = document.querySelector('.crypto__content-btn');
 
     cryptoBtn.addEventListener("click", () => {
         navigator.clipboard.writeText(cryptoWallet.innerText);
@@ -301,7 +354,7 @@ if (cryptoWallet) {
 }
 
 if (referralsInput) {
-    const referralsBtn = document.querySelector('.referrals__form-btn');
+    let referralsBtn = document.querySelector('.referrals__form-btn');
 
     referralsBtn.addEventListener("click", () => {
         navigator.clipboard.writeText(referralsInput.value);
@@ -311,8 +364,6 @@ if (referralsInput) {
 
 
 // SELECT/////////////////////////////////
-const table = document.querySelector(".referrals__table-contentSort");
-
 if (table) {
     let tbody = table.querySelector(".referrals__table-tbody");
     let select = document.querySelector(".referrals__formSort-select");

@@ -261,34 +261,56 @@
                     ОНЛАЙН КАЛЬКУЛЯТОР
                 </h2>
 
-                <form class="calculator__sum" onsubmit="return false;">
-                    <label>
-                        <input class="calculator__line" id="calc-input" type="range" min="100" max="50000" step="1"
-                               value="100">
-                    </label>
+                <form class="calculator__sum">
+                    <div class="calculator__sum-digits">
+                        СКОРОСТЬ
+                        <div class="formInput">
+                            <button type="button" class="formInput__minus">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                            <label>
+                                <input class="formInput__input" type="number" min="0" max="5000"
+                                       value="0" autocomplete="off">
+                            </label>
+                            <button type="button" class="formInput__plus">
+                                <svg viewBox="0 0 24 24">
+                                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                                </svg>
+                            </button>
+                        </div>
+                        MH/s
+                    </div>
 
-                    <label class="calculator__sum-title">
-                        СУММА
-                        <input id="calc-value" class="calculator__sum-digits" type="number" autocomplete="off">
-                    </label>
+                    <div class="calculator__sum-speed">
+                        <output class="calculator__sum-output">0.00000</output>
+                        РУБ.
+                    </div>
                 </form>
-
-                <p class="calculator__count">
-                    ВАША СКОРОСТЬ УВЕЛИЧИТСЯ НА:
-                    <output id="sp-up" class="calculator__count-speed"></output>
-                    МОНЕТ В СЕКУНДУ
-                </p>
 
                 <div class="calculator__content">
                     <div class="calculator__profit">
+                        <div class="calculator__profit-item">
+                            <div class="calculator__profit-text">
+                                ПРИБЫЛЬ ЗА 1 ЧАС:
+                            </div>
+
+                            <div class="calculator__profit-sum">
+                                <output id="hour" class="calculator__profit-digits">0.00</output>
+                                RUR
+                            </div>
+                        </div>
+
                         <div class="calculator__profit-item">
                             <div class="calculator__profit-text">
                                 ПРИБЫЛЬ ЗА 1 ДЕНЬ:
                             </div>
 
                             <div class="calculator__profit-sum">
-                                <output id="day" class="calculator__profit-digits"></output>
-                                монет
+                                <output id="day" class="calculator__profit-digits">0.00</output>
+                                RUR
                             </div>
                         </div>
 
@@ -298,8 +320,8 @@
                             </div>
 
                             <div class="calculator__profit-sum">
-                                <output id="month" class="calculator__profit-digits"></output>
-                                монет
+                                <output id="month" class="calculator__profit-digits">0.00</output>
+                                RUR
                             </div>
                         </div>
 
@@ -309,19 +331,8 @@
                             </div>
 
                             <div class="calculator__profit-sum">
-                                <output id="threeMonth" class="calculator__profit-digits"></output>
-                                монет
-                            </div>
-                        </div>
-
-                        <div class="calculator__profit-item">
-                            <div class="calculator__profit-text">
-                                ПРИБЫЛЬ ЗА 6 МЕСЯЦЕВ:
-                            </div>
-
-                            <div class="calculator__profit-sum">
-                                <output id="sixMonth" class="calculator__profit-digits"></output>
-                                монет
+                                <output id="threeMonth" class="calculator__profit-digits">0.00</output>
+                                RUR
                             </div>
                         </div>
                     </div>
