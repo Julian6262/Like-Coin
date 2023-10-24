@@ -134,8 +134,8 @@ if (calculatorTitle) {
     let speedStart = false;
 
     let calcInput = document.querySelector(".formInput__input");
-    let calculatorSpeed = document.querySelector(".calculator__sum-speed");
-    let calculatorOutput = document.querySelector(".calculator__sum-output");
+    let calculatorSpeed = document.querySelector(".calculator__profit-speed");
+    let calculatorOutput = document.querySelector(".calculator__profit-output");
     let inputMinus = document.querySelector(".formInput__minus");
     let inputPlus = document.querySelector(".formInput__plus");
     let hour = document.getElementById("hour");
@@ -158,9 +158,9 @@ if (calculatorTitle) {
         }
 
         if (calcInput.value > 0) {
-            calculatorSpeed.classList.add('calculator__sum-speed--fade');
+            calculatorSpeed.classList.add('calculator__profit-speed--fade');
         } else {
-            calculatorSpeed.classList.remove('calculator__sum-speed--fade');
+            calculatorSpeed.classList.remove('calculator__profit-speed--fade');
         }
 
         hour.value = (calcInput.value * MULTIPLIER).toFixed(2);
