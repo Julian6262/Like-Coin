@@ -126,12 +126,16 @@ if (calculatorTitle) {
 
 // CALCULATOR/////////////////////////////////
 if (calculatorTitle) {
-    let idTimeout;
+    let idInterval;
+    let idIntervalDown;
     let idTimeoutDown;
+    let idIntervalUp;
     let idTimeoutUp;
+    let speedStart = false;
 
     let calcInput = document.querySelector(".formInput__input");
-    let calculatorSpeed = document.querySelector(".calculator__sum-output");
+    let calculatorSpeed = document.querySelector(".calculator__sum-speed");
+    let calculatorOutput = document.querySelector(".calculator__sum-output");
     let inputMinus = document.querySelector(".formInput__minus");
     let inputPlus = document.querySelector(".formInput__plus");
     let hour = document.getElementById("hour");
@@ -139,15 +143,24 @@ if (calculatorTitle) {
     let month = document.getElementById("month");
     let threeMonth = document.getElementById("threeMonth");
 
-    function calculate() {
-        calculatorSpeed.value = (0).toFixed(5);
+    function calculate(sign) {
+        calculatorOutput.value = (0).toFixed(5);
+
+        if (sign) {
+            calcInput.value = (sign === "-" ? +calcInput.value - 1 : +calcInput.value + 1);
+        }
 
         if (calcInput.value > 5000) {
             calcInput.value = 5000;
         }
-
         if (calcInput.value < 0 || calcInput.value === "") {
             calcInput.value = 0;
+        }
+
+        if (calcInput.value > 0) {
+            calculatorSpeed.classList.add('calculator__sum-speed--fade');
+        } else {
+            calculatorSpeed.classList.remove('calculator__sum-speed--fade');
         }
 
         hour.value = (calcInput.value * MULTIPLIER).toFixed(2);
@@ -155,11 +168,13 @@ if (calculatorTitle) {
         month.value = (day.value * 30).toFixed(2);
         threeMonth.value = (month.value * 3).toFixed(2);
 
-        clearTimeout(idTimeout);
+        clearInterval(idInterval);
 
-        idTimeout = setInterval(() => {
-            calculatorSpeed.value = (+calculatorSpeed.value + 0.00001).toFixed(5);
-        }, 3600);
+        if (calcInput.value > 0 && speedStart) {
+            idInterval = setInterval(() => {
+                calculatorOutput.value = (+calculatorOutput.value + 0.00001).toFixed(5);
+            }, 3600 / calcInput.value);
+        }
     }
 
     calcInput.addEventListener("keydown", (event) => {
@@ -170,31 +185,41 @@ if (calculatorTitle) {
     });
 
     calcInput.addEventListener("input", () => {
+        speedStart = true;
         calculate();
     });
 
     inputMinus.addEventListener("mousedown", () => {
-        idTimeoutDown = setInterval(() => {
-            calcInput.value = +calcInput.value - 1
-            calculate();
-        }, 30);
+        speedStart = false;
+        idTimeoutDown = setTimeout(() => {
+            idIntervalDown = setInterval(() => {
+                calculate("-");
+            }, 10);
+        }, 200);
     });
 
     inputMinus.addEventListener("mouseup", () => {
+        clearInterval(idIntervalDown);
         clearTimeout(idTimeoutDown);
+        speedStart = true;
+        calculate("-");
     });
 
-
-
     inputPlus.addEventListener("mousedown", () => {
-        idTimeoutUp = setInterval(() => {
-            calcInput.value = +calcInput.value + 1
-            calculate();
-        }, 30);
+        speedStart = false;
+        idTimeoutUp = setTimeout(() => {
+            idIntervalUp = setInterval(() => {
+                calculate("+");
+            }, 10);
+        }, 200);
+
     });
 
     inputPlus.addEventListener("mouseup", () => {
+        clearInterval(idIntervalUp);
         clearTimeout(idTimeoutUp);
+        speedStart = true;
+        calculate("+");
     });
 }
 
