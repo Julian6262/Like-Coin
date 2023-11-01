@@ -13,73 +13,70 @@ if (calculatorTitle) {
     let startItems = document.querySelectorAll(".start__item");
     let supportText = document.querySelector(".support__text");
     let formInput = document.querySelector(".formInput");
-
-    let calculatorCheck = false;
-    let startCheck = false;
-    let startTextCheck = false;
-    let startItemCheck = false;
-    let supportTextCheck = false;
-    let formInputCheck = false;
+    let calculatorProfit = document.querySelector(".calculator__profit");
+    let calculatorProfitGlass = document.querySelector(".calculator__profit-glass");
+    let calculatorReferralsText = document.querySelector(".calculator__referrals-text");
+    let calculatorText = document.querySelector(".calculator__text");
 
     function scroll() {
         let windowPos = window.innerHeight + window.scrollY;
-        let calculatorTitlePos = windowPos - calculatorTitle.offsetTop;
-        let startTitlePos = windowPos - startTitle.offsetTop;
-        let startTextPos = windowPos - startText.offsetTop;
-        let startItemPos = windowPos - startItems[0].offsetTop;
-        let supportTextPos = windowPos - supportText.offsetTop;
-        let formInputPos = windowPos - formInput.offsetTop;
 
-        if (calculatorTitlePos >= 0 && calculatorCheck === false) {
-            calculatorCheck = true;
+        if (windowPos - calculatorTitle.offsetTop >= 0 && !calculatorTitle.classList.contains('calculator__title--fade')) {
             calculatorTitle.classList.add('calculator__title--fade');
-        } else if (calculatorTitlePos < 0 && calculatorCheck === true) {
-            calculatorCheck = false;
+        } else if (windowPos - calculatorTitle.offsetTop < 0 && calculatorTitle.classList.contains('calculator__title--fade')) {
             calculatorTitle.classList.remove('calculator__title--fade');
         }
 
-        if (startTitlePos >= 0 && startCheck === false) {
-            startCheck = true;
+        if (windowPos - startTitle.offsetTop >= 0 && !startTitle.classList.contains('start__title--fade')) {
             startTitle.classList.add('start__title--fade');
-        } else if (startTitlePos < 0 && startCheck === true) {
-            startCheck = false;
+        } else if (windowPos - startTitle.offsetTop < 0 && startTitle.classList.contains('start__title--fade')) {
             startTitle.classList.remove('start__title--fade');
         }
 
-        if (startTextPos >= 0 && startTextCheck === false) {
-            startTextCheck = true;
+        if (windowPos - startText.offsetTop >= 0 && !startText.classList.contains('start__text--fade')) {
             startText.classList.add('start__text--fade');
-        } else if (startTextPos < 0 && startTextCheck === true) {
-            startTextCheck = false;
+        } else if (windowPos - startText.offsetTop < 0 && startText.classList.contains('start__text--fade')) {
             startText.classList.remove('start__text--fade');
         }
 
-        if (supportTextPos >= 0 && supportTextCheck === false) {
-            supportTextCheck = true;
+        if (windowPos - supportText.offsetTop >= 0 && !supportText.classList.contains('support__text--fade')) {
             supportText.classList.add('support__text--fade');
-        } else if (supportTextPos < 0 && supportTextCheck === true) {
-            supportTextCheck = false;
+        } else if (windowPos - supportText.offsetTop < 0 && supportText.classList.contains('support__text--fade')) {
             supportText.classList.remove('support__text--fade');
         }
 
-        if (startItemPos >= 0 && startItemCheck === false) {
-            startItemCheck = true;
+        if (windowPos - startItems[0].offsetTop >= 0 && !startItems[0].classList.contains('start__item--fade')) {
             startItems.forEach((item) => {
                 item.classList.add('start__item--fade');
             });
-        } else if (startItemPos < 0 && startItemCheck === true) {
-            startItemCheck = false;
+        } else if (windowPos - startItems[0].offsetTop < 0 && startItems[0].classList.contains('start__item--fade')) {
             startItems.forEach((item) => {
                 item.classList.remove('start__item--fade');
             });
         }
 
-        if (formInputPos >= 0 && formInputCheck === false) {
-            formInputCheck = true;
+        if (windowPos - formInput.offsetTop >= 0 && !formInput.classList.contains('formInput--fade')) {
             formInput.classList.add('formInput--fade');
-        } else if (formInputPos < 0 && formInputCheck === true) {
-            formInputCheck = false;
+        } else if (windowPos - formInput.offsetTop < 0 && formInput.classList.contains('formInput--fade')) {
             formInput.classList.remove('formInput--fade');
+        }
+
+        if (windowPos - calculatorProfit.offsetTop >= 0 && !calculatorProfitGlass.classList.contains('calculator__profit-glass--fade')) {
+            calculatorProfitGlass.classList.add('calculator__profit-glass--fade');
+        } else if (windowPos - calculatorProfit.offsetTop < 0 && calculatorProfitGlass.classList.contains('calculator__profit-glass--fade')) {
+            calculatorProfitGlass.classList.remove('calculator__profit-glass--fade');
+        }
+
+        if (windowPos - calculatorReferralsText.offsetTop >= 0 && !calculatorReferralsText.classList.contains('calculator__referrals-text--fade')) {
+            calculatorReferralsText.classList.add('calculator__referrals-text--fade');
+        } else if (windowPos - calculatorReferralsText.offsetTop < 0 && calculatorReferralsText.classList.contains('calculator__referrals-text--fade')) {
+            calculatorReferralsText.classList.remove('calculator__referrals-text--fade');
+        }
+
+        if (windowPos - calculatorText.offsetTop >= 0 && !calculatorText.classList.contains('calculator__text--fade')) {
+            calculatorText.classList.add('calculator__text--fade');
+        } else if (windowPos - calculatorText.offsetTop < 0 && calculatorText.classList.contains('calculator__text--fade')) {
+            calculatorText.classList.remove('calculator__text--fade');
         }
     }
 
